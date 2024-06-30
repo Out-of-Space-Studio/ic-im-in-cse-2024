@@ -1,64 +1,140 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewpoint" content="width-device= width, initial-scale= 1, user-scalable= no">
-    <meta name="author" content="JelyF1shhhhhh">
-    <meta name="copyright" content="Out of Space Studio">
-    <meta 
-        name="title" 
-        content="YZU College of Informatics Orientation"
-    />
-    <meta 
-        name="description" 
-        content="A Website for YZU College of Informatics Orientation."
-    />
-    <meta property="og:title" content="YZU College of Informatics Orientation">
-    <meta property="og:image" content="">
-    <meta property="og:url" content="">
-    <meta property="description" content="The only thing I know is that I'm weak :D">
+    <head>
+        <!-- meta -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewpoint"
+            content="width-device= width, initial-scale= 1, user-scalable= no"
+        />
+        <meta name="author" content="JelyF1shhhhhh" />
+        <meta name="copyright" content="Out of Space Studio" />
+        <meta name="title" content="YZU College of Informatics Orientation" />
+        <meta
+            name="description"
+            content="A Website for YZU College of Informatics Orientation."
+        />
+        <meta
+            property="og:title"
+            content="YZU College of Informatics Orientation"
+        />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="" />
+        <meta
+            property="description"
+            content="The only thing I know is that I'm weak :D"
+        />
 
-    <link rel="icon" href="./images/favicon.ico">
-    <title>YZU College of Informatics Orientation</title>
-    <!-- <meta http-equiv="refresh" content="0; url= https://yzucse-cat.myddns.me/ic-im-in-cse-2024"> -->
-</head>
-<body>
-    <!-- <audio autoplay controls loop src="./bg-music.mp3"></audio> -->
-    <div class="nav-bar">
-        <div class="home logo">
-            <img src="" alt="logo">
+        <!-- <meta http-equiv="refresh" content="0; url= https://ic-im-in-cse-2024.pages.dev"> -->
+
+        <!-- meta -->
+
+        <!-- file loading -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+
+        <link rel="icon" href="./images/favicon.ico" />
+        <link rel="stylesheet" href="styles.css" />
+        <!-- file loading -->
+        <title>YZU College of Informatics Orientation</title>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+    </head>
+
+    <body>
+        <!-- <audio autoplay controls loop src="./bg-music.mp3"></audio> -->
+
+        <!------------ 
+        
+        選單 
+
+    ------------>
+        <div class="header">
+            <a href="index.html" class="direct">
+                <img
+                    src="./images/favicon.png"
+                    alt="Site Logo"
+                    aria-label="Home"
+                    class="logo"
+                />
+            </a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <span class="material-symbols-outlined menu-icon"> menu </span>
+            <ul class="nav-bar">
+                <li>
+                    <a href="index.html" class="direct menu">首頁</a>
+                </li>
+                <li>
+                    <a href="#story" class="direct menu">劇情故事</a>
+                </li>
+                <li>
+                    <a href="#info" class="direct menu">活動資訊</a>
+                </li>
+                <li>
+                    <a href="./signup/index.html" class="direct menu"
+                        >報名專區</a
+                    >
+                </li>
+                <li><a href="#picture" class="direct menu">照片回顧</a></li>
+            </ul>
         </div>
-        <div class="direct">
-            <input type="button" value="story" onclick="location.href='./story/index.html'">
-            <input type="button" value="info" onclick="location.href='./info/index.html'">
-            <input type="button" value="form" onclick="location.href='./form/index.html'">
-            <input type="button" value="picture" onclick="location.href='./picture/index.html'">
+        <div class="home">
+            <p class="title">腦資急轉彎X</p>
         </div>
-    </div>
-    <div class="body">
-        <div class="title">
-            <p class="text">
-                腦資急轉彎X
-            </p>
+        
+        <section class="story" id="story">
+            <p class="title">背景故事</p>
+            Here is the story part
+        </section>
+        
+        <section class="info">
+            <p class="title">活動資訊</p>
+            Here is some of the infomations about this event.
+        </section>
+        
+        <section class="picture">
+            <p class="title">活動紀錄</p>
+            (To be Continued...)
+        </section>
+
+        <div class="footer">
+            <div class="ic">
+                <input
+                    type="button"
+                    value="IC"
+                    onclick="window.open('https://infocom.yzu.edu.tw', 'blank')"
+                />
+            </div>
+            <div class="im">
+                <input
+                    type="button"
+                    value="IM"
+                    onclick="window.open('https://www.mis.yzu.edu.tw', 'blank')"
+                />
+            </div>
+            <div class="in">
+                <input
+                    type="button"
+                    value="IN"
+                    onclick="window.open('https://www.in.yzu.edu.tw', 'blank')"
+                />
+            </div>
+            <div class="cse">
+                <input
+                    type="button"
+                    value="CSE"
+                    onclick="window.open('https://www.cse.yzu.edu.tw', 'blank')"
+                />
+            </div>
+            <div class="ci">
+                <input
+                    type="button"
+                    value="CI"
+                    onclick="window.open('https://www.ci.yzu.edu.tw', 'blank')"
+                />
+            </div>
+            <div class="license"></div>
         </div>
-    </div>
-    <div class="footer">
-        <div class="ic">
-            <input type="button" value="IC" onclick="window.open('https://infocom.yzu.edu.tw', 'blank')">
-        </div>
-        <div class="im">
-            <input type="button" value="IM" onclick="window.open('https://www.mis.yzu.edu.tw', 'blank')">
-        </div>
-        <div class="in">
-            <input type="button" value="IN" onclick="window.open('https://www.in.yzu.edu.tw', 'blank')">
-        </div>
-        <div class="cse">
-            <input type="button" value="CSE" onclick="window.open('https://www.cse.yzu.edu.tw', 'blank')">
-        </div>
-        <div class="ci">
-            <input type="button" value="CI" onclick="window.open('https://www.ci.yzu.edu.tw', 'blank')">
-        </div>
-        <div class="license"></div>
-    </div>        
-</body>
+    </body>
 </html>
