@@ -216,16 +216,8 @@ a {
 }
 
 /* menu */
-
-.header{
-
-	background-color: #000000b9;
-}
-
 .header .menu {
-	background-color: #00000000;
-	color: #fff;
-	clear: both;
+    clear: both;
     max-height: 0;
     transition: max-height 0.2s ease-out;
 }
@@ -356,8 +348,8 @@ section {
 .footer .event-title {
     color: #000000b9;
     text-align: center;
-	font-size: 25px;
-	font-weight: bold;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .footer a {
