@@ -40,7 +40,8 @@
         ></script>
 
         <link rel="icon" href="./images/favicon.ico" />
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="./styles.css" />
+        <script src="./menu-fixed.js"></script>
         <!-- file loading -->
         <title>YZU College of Informatics Orientation</title>
         <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -55,7 +56,7 @@
 
         ------------>
         <div class="header">
-            <a href="index.html" class="direct">
+            <a href="./index.html" class="direct">
                 <img
                     src="./images/favicon.png"
                     alt="Site Logo"
@@ -69,20 +70,39 @@
             ></label>
             <ul class="menu">
                 <li>
-                    <a href="index.html" class="direct menu">首頁</a>
+                    <a
+                        href="./index.html"
+                        class="direct menu"
+                        onclick="menu_close()"
+                        >首頁</a
+                    >
                 </li>
                 <li>
-                    <a href="#story" class="direct menu">劇情故事</a>
+                    <a href="#story" class="direct menu" onclick="menu_close()"
+                        >劇情故事</a
+                    >
                 </li>
                 <li>
-                    <a href="#info" class="direct menu">活動資訊</a>
+                    <a href="#info" class="direct menu" onclick="menu_close()"
+                        >活動資訊</a
+                    >
                 </li>
                 <li>
-                    <a href="./signup/index.html" class="direct menu"
+                    <a
+                        href="./signup/index.html"
+                        class="direct menu"
+                        onclick="menu_close()"
                         >報名專區</a
                     >
                 </li>
-                <li><a href="#picture" class="direct menu">照片回顧</a></li>
+                <li>
+                    <a
+                        href="#picture"
+                        class="direct menu"
+                        onclick="menu_close()"
+                        >照片回顧</a
+                    >
+                </li>
             </ul>
         </div>
         <!------------ 
