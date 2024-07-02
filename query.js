@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Back to top button functionality initialized");
 });
 
-// To close the navbar stuff
+// to close the navbar stuff
 document.addEventListener("click", function (event) {
     var isClickInside = document
         .querySelector(".header")
