@@ -413,7 +413,7 @@ a {
 /*
 	section start
 */
-section {
+.section {
     padding: 5rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -427,7 +427,7 @@ section {
 }
 
 @media screen and (max-width: 72em) {
-    section {
+    .section {
         padding: 5rem 1rem;
     }
     .title {

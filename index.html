@@ -41,26 +41,28 @@
 
         <link rel="icon" href="./images/favicon.ico" />
         <link rel="stylesheet" href="./styles.css" />
-        <script src="./menu-fixed.js"></script>
+        <script src="./query.js"></script>
         <!-- file loading -->
         <title>YZU College of Informatics Orientation</title>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
     </head>
 
-    <body data-bs-theme="light">
+    <body>
+        <noscript>You need to enable JavaScript to run this app. </noscript>
         <!-- <audio autoplay controls loop src="./bg-music.mp3"></audio> -->
 
-        <!------------ 
-        
-            選單 
-
-        ------------>
+        <!-- 選單 -->
         <div class="header">
             <a href="./index.html" class="logo">
-                <img src="./images/favicon.png" alt="Site Logo" aria-label="Home" />
+                <img
+                    src="./images/favicon.png"
+                    alt="Site Logo"
+                    aria-label="Home"
+                />
             </a>
             <input class="menu-btn" type="checkbox" id="menu-btn" />
-            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <label class="menu-icon" for="menu-btn"
+                ><span class="navicon"></span
+            ></label>
             <nav class="menu">
                 <a href="./index.html">首頁</a>
                 <a href="#story">劇情故事</a>
@@ -69,42 +71,34 @@
                 <a href="#picture">照片回顧</a>
             </nav>
         </div>
-        <!------------ 
-        
-            頁面
+        <!-- 頁面 -->
 
-        ------------>
-
-        <section class="home" id="home">
+        <div class="section home" id="home">
             <h1 class="title">腦資急轉彎X</h1>
             <p class="subtitle">
                 Welcome to YZU College of Informatics Orientation
             </p>
             <a href="#info" class="cta-button">Learn More</a>
-        </section>
+        </div>
 
-        <section class="story" id="story">
+        <div class="section story" id="story">
             <h2 class="title">背景故事</h2>
             <div class="story-content">
                 <p>Here is the story part...</p>
                 <!-- Add more story content -->
             </div>
-        </section>
+        </div>
 
-        <section class="info">
+        <div class="section info" id="info">
             <p class="title">活動資訊</p>
             Here is some of the infomations about this event.
-        </section>
+        </div>
 
-        <section class="picture">
+        <div class="section picture" id="picture">
             <p class="title">活動紀錄</p>
             (To be Continued...)
-        </section>
-        <!------------ 
-        
-            頁尾
-
-        ------------>
+        </div>
+        <!-- 頁尾 -->
         <div class="footer">
             <div class="row-container">
                 <div class="row">
