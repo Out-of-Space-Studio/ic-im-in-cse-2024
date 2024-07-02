@@ -51,19 +51,20 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Back to top button functionality initialized");
 });
 
-function showImage(src) {
+window.showImage = function(src) {
     var modal = document.getElementById("imageModal");
     var modalImg = document.getElementById("modalImage");
     modal.style.display = "block";
     modalImg.src = src;
 }
 
-function closeImage(event) {
+window.closeImage = function(event) {
     var modal = document.getElementById("imageModal");
     if (event.target === modal || event.target.className === "close") {
         modal.style.display = "none";
     }
 }
+
 
 function check_form() {}
 
