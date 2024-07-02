@@ -72,13 +72,13 @@
             </nav>
         </div>
         <!-- 頁面 -->
-        <div class="body">
-            <div class="s-title">
-                <p class="text">報名資訊</p>
+        <div class="container">
+            <div class="body">
+                <p class="title">報名資訊</p>
 
                 <form method="post" class="form">
-                    <label for="personal">個人資料</label>
-                    <div class="personal">
+                    <label for="personal" class="s-title c-title">個人資料</label>
+                    <div class="personal classification">
                         <!-- <div class="column">
                             <p class="s-title">科系</p>
                             <select
@@ -96,7 +96,7 @@
                             <p class="s-title">學號(不須加s)</p>
                             <input
                                 type="text"
-                                class="sid"
+                                class="inp"
                                 id="SID"
                                 pattern="113\d{4}|112\d{4}"
                                 placeholder="1130123"
@@ -113,7 +113,7 @@
                             <p class="s-title">姓名</p>
                             <input
                                 type="text"
-                                class="name"
+                                class="inp"
                                 id="NAME"
                                 placeholder="王大明"
                                 required
@@ -123,7 +123,7 @@
                             <p class="s-title">性別</p>
                             <select
                                 name="selection-box"
-                                class="gender"
+                                class="inp"
                                 id="GENDER"
                             >
                                 <option value="BOY">男</option>
@@ -133,7 +133,7 @@
                         <div class="column">
                             <p class="s-title">飲食習慣</p>
                             <p>葷/素</p>
-                            <select name="selection-box" class="diet" id="DIET">
+                            <select name="selection-box" class="inp" id="DIET">
                                 <option value="NORMAL">葷</option>
                                 <option value="VEGAN">全素</option>
                                 <option value="VEGETARIAN">蛋奶素</option>
@@ -144,7 +144,7 @@
                             <p>過敏食物</p>
                             <input
                                 type="text"
-                                class="allergy"
+                                class="inp"
                                 id="ALLERGY"
                                 placeholder="海鮮"
                                 required
@@ -154,7 +154,7 @@
                             <p class="s-title">身分證字號</p>
                             <input
                                 type="text"
-                                class="IDNumber"
+                                class="inp"
                                 id="IDNumber"
                                 pattern="[a-zA-Z]1\d{8}|[a-zA-Z]2\d{8}"
                                 placeholder="A123456789"
@@ -165,7 +165,7 @@
                             <p class="s-title">生日(西元)</p>
                             <input
                                 type="date"
-                                class="birth"
+                                class="inp"
                                 id="BIRTH"
                                 pattern=""
                                 placeholder="YYYYMMDD"
@@ -176,7 +176,7 @@
                             <p class="s-title">電話</p>
                             <input
                                 type="text"
-                                class="phoneNumber"
+                                class="inp"
                                 id="phoneNumber"
                                 pattern="09\d{8}"
                                 placeholder="0912345678"
@@ -187,7 +187,7 @@
                             <p class="s-title">衣服尺寸</p>
                             <select
                                 name="selection-box"
-                                class="clothingSize"
+                                class="inp"
                                 id="CLOTHINGSIZE"
                             >
                                 <!-- <option value="3XL">3XL</option> -->
@@ -206,12 +206,12 @@
                                 >點此參考尺寸表</a
                             > -->
                             <span
-                                class="keyword"
+                                class="comment"
                                 onclick="showImage('../images/clothing-size.png')"
                                 >點此參考尺寸表</span
                             >
 
-                            <div
+                            <!-- <div
                                 id="imageModal"
                                 class="modal"
                                 onclick="closeImage(event)"
@@ -224,16 +224,16 @@
                                         alt="Size Chart"
                                     />
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
-                    <label for="relations">緊急聯絡人</label>
-                    <div class="relations">
+                    <label for="relations" class="s-title c-title">緊急聯絡人</label>
+                    <div class="relations classification">
                         <div class="column">
                             <p class="s-title">姓名</p>
                             <input
                                 type="text"
-                                class="ICEName"
+                                class="inp"
                                 id="ICEName"
                                 placeholder="丁小美"
                                 required
@@ -243,7 +243,7 @@
                             <p class="s-title">關係</p>
                             <select
                                 name="selection-box"
-                                class="ICERelationship"
+                                class="inp"
                                 id="ICERelationship"
                             >
                                 <option value="FATHER">父</option>
@@ -257,13 +257,21 @@
                             <p class="s-title">電話</p>
                             <input
                                 type="text"
-                                class="ICEPhoneNumber"
+                                class="inp"
                                 id="ICEPhoneNumber"
                                 pattern="09\d{8}"
                                 placeholder="0912345678"
                                 required
                             />
                         </div>
+                    </div>
+                    <div class="btn">
+                        <input
+                            type="submit"
+                            class="submit"
+                            id="SUBMIT"
+                            onclick="check_form()"
+                        />
                     </div>
                 </form>
             </div>

@@ -438,10 +438,109 @@ section {
 /*
 	form start
 */
-.keyword {
-    color: blue;
-    text-decoration: underline;
+.container {
+    padding: 5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.body {
+    width: 100%;
+    max-width: 60%;
+    /* border: #2c3e50 solid; */
+}
+.c-title{
+
+    margin: 20px 0;
+    font-weight: bold;
+}
+.body .title {
+    text-align: center;
+    font-size: 35px;
+}
+.body .s-title {
+    text-align: left;
+    font-size: 20px;
+}
+.body .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.personal,
+.relations {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 50%;
+    /* border: #2c3e50 solid; */
+}
+.column {
+    margin: 10px 0;
+    text-align: left;
+    width: 100%;
+    max-width: 150%;
+    /* border: #2c3e50 solid; */
+}
+.body .inp,
+.body select {
+    width: 100%;
+    display: block;
+    margin: 15px 0px 15px 0px;
+    padding: 10px 12px;
+    border: 1px solid #2c3e50;
+    background: rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    color: #2c3e50;
+    outline: none;
+}
+
+.body .inp::placeholder {
+    color: #7f8c8d;
+    opacity: 1; /* Firefox */
+}
+.body select option {
+    color: #7f8c8d;
+}
+
+/* For IE and Edge */
+.body select::-ms-value {
+    color: #7f8c8d;
+}
+
+/* For Firefox */
+.body select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #7f8c8d;
+}
+
+.submit {
+    text-align: center;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+    background: #2c3e50;
+    display: block;
+    width: 100%;
+    max-width: 150%;
+    padding: 10px 35px 10px 35px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.15s ease;
+    position: relative;
+    &:hover {
+        color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 6px 10px 2px rgba(0, 0, 0, 0.3);
+    }
+    &:active {
+        top: 2px;
+    }
+}
+
+.comment {
+    color: #3498db;
+    text-decoration: none;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .modal {
@@ -522,13 +621,12 @@ section {
         right: 5px;
     }
 }
-/*
-	form end
-*/
-
 .size-img {
     display: none;
 }
+/*
+	form end
+*/
 
 /*
 	footer start
