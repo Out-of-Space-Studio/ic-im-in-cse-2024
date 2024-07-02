@@ -164,6 +164,7 @@ textarea {
 */
 html {
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 @media screen and (max-width: 768px) {
@@ -187,6 +188,15 @@ h6 {
     margin-bottom: 1rem;
 }
 
+a, button, input, select {
+    transition: all 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .title {
     font-size: 2.5rem;
 }
@@ -203,10 +213,6 @@ h6 {
     .s-title {
         font-size: 1.5rem;
     }
-}
-a {
-    text-decoration: none;
-    color: inherit;
 }
 /*
     default end
@@ -444,14 +450,16 @@ section {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-direction: column;
 }
 .body {
     width: 100%;
     max-width: 60%;
+    max-width: 800px;
+    padding: 0 20px;
     /* border: #2c3e50 solid; */
 }
-.c-title{
-
+.c-title {
     margin: 20px 0;
     font-weight: bold;
 }
@@ -472,17 +480,18 @@ section {
 .relations {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 50%;
+    width: 50%;
+    max-width: 100%;
     /* border: #2c3e50 solid; */
 }
 .column {
-    margin: 10px 0;
+    margin: 10px 0 20px 0;
     text-align: left;
     width: 100%;
     max-width: 150%;
     /* border: #2c3e50 solid; */
 }
+
 .body .inp,
 .body select {
     width: 100%;
@@ -490,10 +499,17 @@ section {
     margin: 15px 0px 15px 0px;
     padding: 10px 12px;
     border: 1px solid #2c3e50;
+    border-radius: 4px;
     background: rgba(255, 255, 255, 0.2);
     box-sizing: border-box;
     color: #2c3e50;
     outline: none;
+    transition: all 0.3s ease;
+}
+
+.inp:focus,
+select:focus {
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
 .body .inp::placeholder {
@@ -516,25 +532,35 @@ section {
 }
 
 .submit {
+    background-color: #3498db;
+    padding: 12px 20px;
+    color: white;
+    
     text-align: center;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
     background: #2c3e50;
     display: block;
     width: 100%;
     max-width: 150%;
-    padding: 10px 35px 10px 35px;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.7);
-    transition: all 0.15s ease;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
     position: relative;
     &:hover {
         color: rgba(255, 255, 255, 0.9);
         box-shadow: 0 6px 10px 2px rgba(0, 0, 0, 0.3);
+        .submit:hover {
+            background-color: #2980b9;
+        }
     }
     &:active {
         top: 2px;
     }
 }
+
 
 .comment {
     color: #3498db;
@@ -561,7 +587,7 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    max-width: 1200px;
+    max-width: 600px;
     max-height: 90vh;
 }
 
@@ -584,6 +610,7 @@ section {
 }
 
 @media screen and (max-width: 768px) {
+    
     .modal-content {
         width: 95%;
     }
@@ -592,6 +619,12 @@ section {
         right: 10px;
         top: -40px;
         font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 95%;
     }
 }
 

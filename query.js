@@ -1,8 +1,63 @@
+// BTT btn
+document.addEventListener("DOMContentLoaded", function () {
+    var backToTopButton = document.getElementById("back-to-top");
+
+    if (!backToTopButton) {
+        console.error("Back to top button not found in the DOM");
+        return;
+    }
+
+    // Function to check scroll position and show/hide button
+    function toggleBackToTopButton() {
+        if (window.pageYOffset > 300) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    }
+
+    // Function to scroll to top
+    function scrollToTop(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }
+
+    // Throttle function to limit how often a function can fire
+    function throttle(func, limit) {
+        let inThrottle;
+        return function () {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => (inThrottle = false), limit);
+            }
+        };
+    }
+
+    // Add scroll event listener with throttling
+    window.addEventListener("scroll", throttle(toggleBackToTopButton, 100));
+
+    // Add click event listener to the button
+    backToTopButton.addEventListener("click", scrollToTop);
+
+    // Initial check to see if button should be displayed
+    toggleBackToTopButton();
+
+    console.log("Back to top button functionality initialized");
+});
+
 // To close the navbar stuff
-document.addEventListener('click', function(event) {
-    var isClickInside = document.querySelector('.header').contains(event.target);
-    var menuBtn = document.getElementById('menu-btn');
-    
+document.addEventListener("click", function (event) {
+    var isClickInside = document
+        .querySelector(".header")
+        .contains(event.target);
+    var menuBtn = document.getElementById("menu-btn");
+
     if (!isClickInside && menuBtn.checked) {
         menuBtn.checked = false;
     }
@@ -17,11 +72,11 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
 });
 
-window.addEventListener('scroll', function() {
-    var header = document.querySelector('.header');
+window.addEventListener("scroll", function () {
+    var header = document.querySelector(".header");
     if (window.scrollY > 50) {
-        header.classList.add('scrolled');
+        header.classList.add("scrolled");
     } else {
-        header.classList.remove('scrolled');
+        header.classList.remove("scrolled");
     }
 });
