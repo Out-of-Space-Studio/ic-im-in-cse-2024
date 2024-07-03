@@ -38,8 +38,7 @@
             src="https://kit.fontawesome.com/e62f7285ec.js"
             crossorigin="anonymous"
         ></script>
-        <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lfo8AYqAAAAAFKttar2u-8-MPjL728txaRmq5I8"></script>
-         
+        <script src="https://www.google.com/recaptcha/api.js"></script>
 
         <link rel="icon" href="./images/favicon.ico" />
         <link rel="stylesheet" href="./styles.css" />
@@ -286,9 +285,11 @@
                     <div class="btn">
                         <input
                             type="submit"
-                            class="submit"
+                            class="submit g-recaptcha"
                             id="SUBMIT"
-                            onclick="check_form()"
+                            data-sitekey="6LcUXgcqAAAAANUEME6erIMev4sWICtHskv78kWA"
+                            data-action="verify1"
+                            data-callback="check_form()"
                         />
                     </div>
                 </form>
