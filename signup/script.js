@@ -220,6 +220,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const appCheck = initializeAppCheck(app, {
+    provider: new ReCaptchaV3Provider('6LcUXgcqAAAAANUEME6erIMev4sWICtHskv78kWA'),
+  
+    // Optional argument. If true, the SDK automatically refreshes App Check
+    // tokens as needed.
+    isTokenAutoRefreshEnabled: true
+  });
 
 // window.writeUserData = async function (stu) {
 function writeUserData(stu) {
