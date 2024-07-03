@@ -504,7 +504,7 @@ section {
     box-sizing: border-box;
     color: #2c3e50;
     outline: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, border-color 0.3s ease;
 }
 
 .inp:focus,

@@ -76,7 +76,7 @@
             <div class="body">
                 <p class="title">報名資訊</p>
 
-                <form method="post" class="form">
+                <form method="post" class="form" id="FORM">
                     <label for="personal" class="s-title c-title"
                         >個人資料</label
                     >
@@ -128,6 +128,9 @@
                                 class="inp"
                                 id="GENDER"
                             >
+                                <option value="" disabled selected>
+                                    請選擇性別
+                                </option>
                                 <option value="BOY">男</option>
                                 <option value="GIRL">女</option>
                             </select>
@@ -136,6 +139,9 @@
                             <p class="s-title">飲食習慣</p>
                             <p>葷/素</p>
                             <select name="selection-box" class="inp" id="DIET">
+                                <option value="" disabled selected>
+                                    請選擇飲食習慣
+                                </option>
                                 <option value="NORMAL">葷</option>
                                 <option value="VEGAN">全素</option>
                                 <option value="VEGETARIAN">蛋奶素</option>
@@ -193,6 +199,9 @@
                                 id="CLOTHINGSIZE"
                             >
                                 <!-- <option value="3XL">3XL</option> -->
+                                <option value="" disabled selected>
+                                    請選擇衣服尺寸
+                                </option>
                                 <option value="2XL">2XL</option>
                                 <option value="XL">XL</option>
                                 <option value="L">L</option>
@@ -250,6 +259,9 @@
                                 class="inp"
                                 id="ICERelationship"
                             >
+                                <option value="" disabled selected>
+                                    請選擇關係
+                                </option>
                                 <option value="FATHER">父</option>
                                 <option value="MOTHER">母</option>
                                 <option value="GRANDFATHER">爺爺/外公</option>
