@@ -190,9 +190,7 @@ class Stu {
         console.log(isConfirm);
         console.log("checkpoint01");
         if (isConfirm) {
-            alert("checkpoint02");
             await writeUserData(this);
-            alert("checkpoint03");
             // window.location.href = "../../index.html";
         }
     }
@@ -242,7 +240,7 @@ function writeUserData(stu) {
         .then(function () {
             console.log("Data written successfully");
             alert("報名成功");
-            window.location.href = "../../index.html";
+            window.location.href = "../index.html";
         })
         .catch(function (error) {
             console.error("Error writing data: ", error);
