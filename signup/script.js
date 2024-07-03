@@ -65,6 +65,7 @@ window.closeImage = function(event) {
     }
 }
 
+// datas to set
 
 function check_form() {}
 
