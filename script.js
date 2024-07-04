@@ -1,6 +1,6 @@
 // BTT btn
 document.addEventListener("DOMContentLoaded", function () {
-    var backToTopButton = document.getElementById("back-to-top");
+    const backToTopButton = document.getElementById("back-to-top");
 
     if (!backToTopButton) {
         console.error("Back to top button not found in the DOM");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to check scroll position and show/hide button
     function toggleBackToTopButton() {
-        if (window.pageYOffset > 300) {
+        if (window.scrollY> 300 || window.pageYOffSet > 300) {
             backToTopButton.style.display = "block";
         } else {
             backToTopButton.style.display = "none";
@@ -53,10 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // to close the navbar stuff
 document.addEventListener("click", function (event) {
-    var isClickInside = document
+    const isClickInside = document
         .querySelector(".header")
         .contains(event.target);
-    var menuBtn = document.getElementById("menu-btn");
+    const menuBtn = document.getElementById("menu-btn");
 
     if (!isClickInside && menuBtn.checked) {
         menuBtn.checked = false;
@@ -73,7 +73,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 window.addEventListener("scroll", function () {
-    var header = document.querySelector(".header");
+    const header = document.querySelector(".header");
     if (window.scrollY > 50) {
         header.classList.add("scrolled");
     } else {

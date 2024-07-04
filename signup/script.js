@@ -1,6 +1,6 @@
 // BTT btn
 document.addEventListener("DOMContentLoaded", function () {
-    var backToTopButton = document.getElementById("back-to-top");
+    const backToTopButton = document.getElementById("back-to-top");
 
     if (!backToTopButton) {
         console.error("Back to top button not found in the DOM");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to check scroll position and show/hide button
     function toggleBackToTopButton() {
-        if (window.pageYOffset > 300) {
+        if (window.scrollY> 300 || window.pageYOffSet > 300){
             backToTopButton.style.display = "block";
         } else {
             backToTopButton.style.display = "none";
@@ -59,7 +59,7 @@ window.showImage = function (src) {
 };
 
 window.closeImage = function (event) {
-    var modal = document.getElementById("imageModal");
+    const modal = document.getElementById("imageModal");
     if (event.target === modal || event.target.className === "close") {
         modal.style.display = "none";
     }
