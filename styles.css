@@ -86,7 +86,7 @@ video {
     margin: 0;
     padding: 0;
     border: 0;
-    font: normal 100%/normal inherit;
+    font: normal 100% / normal inherit;
     vertical-align: baseline;
 }
 
@@ -385,7 +385,7 @@ a {
         background-color: transparent;
         padding-right: 30px;
     }
-    .header .menu a {
+    /* .header .menu a {
         padding: 10px 15px;
     }
     .header .menu li {
@@ -394,7 +394,7 @@ a {
     }
     .header .menu li a {
         padding: 22px 14px;
-    }
+    } */
     .header .menu-icon {
         display: none;
     }
