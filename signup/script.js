@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to check scroll position and show/hide button
     function toggleBackToTopButton() {
-        if (window.scrollY> 300 || window.pageYOffSet > 300){
+        if (window.scrollY > 300 || window.pageYOffSet > 300) {
             backToTopButton.style.display = "block";
         } else {
             backToTopButton.style.display = "none";
@@ -191,7 +191,6 @@ class Stu {
         console.log("checkpoint01");
         if (isConfirm) {
             await writeUserData(this);
-            // window.location.href = "../../index.html";
         }
     }
 }
@@ -203,8 +202,6 @@ import {
     ref,
     set,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -221,15 +218,16 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const appCheck = initializeAppCheck(app, {
-    provider: new ReCaptchaV3Provider('6LcUXgcqAAAAANUEME6erIMev4sWICtHskv78kWA'),
-  
+    provider: new ReCaptchaV3Provider(
+        "6LcUXgcqAAAAANUEME6erIMev4sWICtHskv78kWA"
+    ),
+
     // Optional argument. If true, the SDK automatically refreshes App Check
     // tokens as needed.
-    isTokenAutoRefreshEnabled: true
-  });
+    isTokenAutoRefreshEnabled: true,
+});
 
-// window.writeUserData = async function (stu) {
-function writeUserData(stu) {
+async function writeUserData(stu) {
     const db = getDatabase();
     set(ref(db, `/students/${stu.sid}`), {
         NAME: stu.name,
