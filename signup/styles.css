@@ -86,7 +86,7 @@ video {
     margin: 0;
     padding: 0;
     border: 0;
-    font: normal 100%/normal inherit;
+    font: normal 100% / normal inherit;
     vertical-align: baseline;
 }
 
@@ -187,7 +187,10 @@ h6 {
     margin-bottom: 1rem;
 }
 
-a, button, input, select {
+a,
+button,
+input,
+select {
     transition: all 0.3s ease;
 }
 
@@ -557,7 +560,16 @@ select:focus {
     top: 2px;
 }
 
+.grecaptcha-badge {
+    width: 70px !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    left: 4px !important;
+}
 
+.grecaptcha-badge:hover {
+    width: 256px !important;
+}
 
 .comment {
     color: #3498db;
@@ -607,7 +619,6 @@ select:focus {
 }
 
 @media screen and (max-width: 768px) {
-    
     .modal-content {
         width: 95%;
     }
