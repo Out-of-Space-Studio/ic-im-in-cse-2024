@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to check scroll position and show/hide button
     function toggleBackToTopButton() {
-        if (window.scrollY> 300 || window.pageYOffSet > 300) {
+        if (window.scrollY > 300 || window.pageYOffSet > 300) {
             backToTopButton.style.display = "block";
         } else {
             backToTopButton.style.display = "none";
