@@ -57,7 +57,7 @@ window.query = async function () {
 
     const fields = {
         SID: "學號",
-        IDNumber: "身分證字號"
+        IDNumber: "身分證字號",
     };
 
     let emptyFields = [];
@@ -161,7 +161,10 @@ import {
     get,
     child,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
+import {
+    initializeAppCheck,
+    ReCaptchaV3Provider,
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app-check.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
