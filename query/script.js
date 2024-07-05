@@ -161,7 +161,7 @@ import {
     get,
     child,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-// import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
+import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -191,6 +191,7 @@ async function readUserData(stu) {
     const db = getDatabase();
     get(ref(db, `students/${stu.id}`))
         .then((snapshot) => {
+            alert("checkpoint1");
             if (snapshot.exists()) {
                 alert("查詢成功");
                 console.log(snapshot.val());
