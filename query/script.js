@@ -54,10 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // datas to get
 window.query = async function () {
     const form = document.getElementById("FORM");
-    if (!form) {
-        console.error("Form not found");
-        return;
-    }
 
     const fields = {
         SID: "學號",
@@ -78,11 +74,7 @@ window.query = async function () {
     let firstEmptyField = null;
 
     for (let [id, label] of Object.entries(fields)) {
-        const field = form.elements[id];
-        if (!field) {
-            console.error(`Field ${id} not found`);
-            continue;
-        }
+        const field = form[id];
         if (!field.value) {
             emptyFields.push(label);
             field.style.borderColor = "red";
@@ -177,11 +169,8 @@ import {
     getDatabase,
     ref,
     get,
+    child,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-import {
-    initializeAppCheck,
-    ReCaptchaV3Provider,
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app-check.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -209,24 +198,27 @@ const appCheck = initializeAppCheck(app, {
 
 async function readUserData(stu) {
     const db = getDatabase();
-    try {
-        const snapshot = await get(ref(db, `/students/${stu.sid}`));
-        if (snapshot.exists()) {
-            const correctData = snapshot.val();
-            if (stu.idnumber === correctData.IDNUMBER) {
-                console.log("Data correct.");
-                alert("報名成功");
-                window.location.href = "../index.html";
+    get(child(db, `students/${stu.id}`))
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log(snapshot.val());
+                alert("查詢成功");
+                const correctData = snapshot.val();
+                if (stu.idnumber === correctData.IDNUMBER) {
+                    console.log("Data correct.");
+                    alert("報名成功");
+                    window.location.href = "../index.html";
+                } else {
+                    console.log("Data wrong.");
+                    alert("學號或身分證字號錯誤");
+                }
             } else {
-                console.log("Data wrong.");
-                alert("學號或身分證字號錯誤");
+                console.log("No data available");
+                alert("找不到該學號的資料");
             }
-        } else {
-            console.log("No data available");
-            alert("找不到該學號的資料");
-        }
-    } catch (error) {
-        console.error("Error reading data: ", error);
-        alert("伺服器發生錯誤，請稍後再試\n錯誤訊息: " + error.message);
-    }
+        })
+        .catch((error) => {
+            console.error("Error reading data: ", error);
+            alert("伺服器發生錯誤，請稍後再試\n錯誤訊息: " + error.message);
+        });
 }
