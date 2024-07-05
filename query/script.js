@@ -161,7 +161,7 @@ import {
     get,
     child,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
+// import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
