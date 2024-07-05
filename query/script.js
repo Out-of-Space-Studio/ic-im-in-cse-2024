@@ -54,6 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // datas to get
 window.query = async function () {
     const form = document.getElementById("FORM");
+    if (!form) {
+        console.error("Form not found");
+        return;
+    }
 
     const fields = {
         SID: "學號",
@@ -74,7 +78,11 @@ window.query = async function () {
     let firstEmptyField = null;
 
     for (let [id, label] of Object.entries(fields)) {
-        const field = form[id];
+        const field = form.elements[id];
+        if (!field) {
+            console.error(`Field ${id} not found`);
+            continue;
+        }
         if (!field.value) {
             emptyFields.push(label);
             field.style.borderColor = "red";
