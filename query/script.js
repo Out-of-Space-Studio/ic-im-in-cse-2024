@@ -51,27 +51,23 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Back to top button functionality initialized");
 });
 
-window.showImage = function (src) {
-    var modal = document.getElementById("imageModal");
-    var modalImg = document.getElementById("modalImage");
-    modal.style.display = "block";
-    modalImg.src = src;
-};
-
-window.closeImage = function (event) {
-    const modal = document.getElementById("imageModal");
-    if (event.target === modal || event.target.className === "close") {
-        modal.style.display = "none";
-    }
-};
-
-// datas to set
-window.query = async function () {
+// datas to get
+window.check_form = async function () {
     const form = document.getElementById("FORM");
 
     const fields = {
         SID: "學號",
+        NAME: "姓名",
+        GENDER: "性別",
+        DIET: "飲食習慣",
+        ALLERGY: "過敏食物",
         IDNumber: "身分證字號",
+        BIRTH: "生日",
+        phoneNumber: "電話",
+        CLOTHINGSIZE: "衣服尺寸",
+        ICEName: "緊急聯絡人姓名",
+        ICERelationship: "與緊急聯絡人關係",
+        ICEPhoneNumber: "緊急聯絡人電話",
     };
 
     let emptyFields = [];
@@ -104,7 +100,20 @@ window.query = async function () {
         return;
     }
 
-    const student = new Stu(form.SID.value, form.IDNumber.value);
+    const student = new Stu(
+        form.SID.value,
+        form.NAME.value,
+        form.GENDER.value,
+        form.DIET.value,
+        form.ALLERGY.value,
+        form.IDNumber.value,
+        form.BIRTH.value,
+        form.phoneNumber.value,
+        form.CLOTHINGSIZE.value,
+        form.ICEName.value,
+        form.ICERelationship.value,
+        form.ICEPhoneNumber.value
+    );
 
     await student.confirmInfo();
 };
@@ -143,34 +152,15 @@ class Stu {
         const isConfirm = window.confirm(
             "請確認以下資訊是否正確\n 學號：" +
                 this.sid +
-                "\n 姓名：" +
-                this.name +
-                "\n 性別：" +
-                this.gender +
-                "\n 葷素：" +
-                this.diet +
                 "\n 身分證字號：" +
-                this.idnumber +
-                "\n 生日：" +
-                this.birth +
-                "\n 聯絡電話：" +
-                this.phoneNumber +
-                "\n 衣服尺寸：" +
-                this.clothingSize +
-                "\n 緊急聯絡人姓名：" +
-                this.emgName +
-                "\n 與緊急聯絡人關係：" +
-                this.emgRelation +
-                "\n 緊急聯絡人電話：" +
-                this.emgPhoneNumber
+                this.idnumber
         );
         console.log(isConfirm);
         console.log("checkpoint01");
         if (isConfirm) {
-            await writeUserData(this);
+            await readUserData(this);
         }
     }
-    async getInfo() {}
 }
 
 // Import the functions you need from the SDKs you need
@@ -178,8 +168,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import {
     getDatabase,
     ref,
-    get,
-    child,
+    set,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 // Your web app's Firebase configuration
@@ -207,62 +196,37 @@ const appCheck = initializeAppCheck(app, {
 });
 
 async function readUserData(stu) {
-    const dbRef = ref(getDatabase());
-    get(child(dbRef, `/students/${stu.sid}`))
-        .then((snapshot) => {
-            if (snapshot.exists()) {
-                console.log(snapshot.val());
-            } else {
-                console.log("No data available");
-            }
-        })
-        .then(function (snapshot) {
-            const data = snapshot.val();
+    const db = getDatabase();
+    correctData= new Stu;
+    get(ref(db, `/students/${stu.sid}`), {
+        NAME: correctData.name,
+        GENDER: correctData.gender,
+        DIET: correctData.diet,
+        ALLERGY: correctData.allergy,
+        IDNUMBER: correctData.idnumber,
+        BIRTH: correctData.birth,
+        PHONE: correctData.phoneNumber,
+        SIZE: correctData.clothingSize,
+        EMGNAME: correctData.emgName,
+        EMGPHONE: correctData.emgPhoneNumber,
+        EMGRELATIONS: correctData.emgRelation,
+    })
+        .then(function () {
+            if(stu.idnumber===correctData.idnumber){
 
-            if (data.IDNumber === stu.IDNumber) {
-                console.log("Success!");
-                // alert("資料查詢成功");
-                const isConfirm = window.confirm(
-                    "以下資訊為報名時填報的資料\n 學號：" +
-                        data.sid +
-                        "\n 姓名：" +
-                        data.name +
-                        "\n 性別：" +
-                        data.gender +
-                        "\n 葷素：" +
-                        data.diet +
-                        "\n 身分證字號：" +
-                        data.idnumber +
-                        "\n 生日：" +
-                        data.birth +
-                        "\n 聯絡電話：" +
-                        data.phoneNumber +
-                        "\n 衣服尺寸：" +
-                        data.clothingSize +
-                        "\n 緊急聯絡人姓名：" +
-                        data.emgName +
-                        "\n 與緊急聯絡人關係：" +
-                        data.emgRelation +
-                        "\n 緊急聯絡人電話：" +
-                        data.emgPhoneNumber
-                );
-                if (isConfirm) {
-                    window.location.href = "../index.html";
-                }
+
+                console.log("Data correct.");
+                alert("報名成功");
+                window.location.href = "../index.html";
+            }
+            else{
+
+                console.log("Data wrong.");
+                alert("學號或昇分證字號錯誤");
             }
         })
-        .catch((error) => {
-            console.error(error);
+        .catch(function (error) {
+            console.error("Error writing data: ", error);
             alert("伺服器發生錯誤，請稍後再試\n錯誤訊息: " + error.message);
         });
-
-    // .then(function () {
-    //     console.log("Data written successfully");
-    //     alert("報名成功");
-    //     window.location.href = "../index.html";
-    // })
-    // .catch(function (error) {
-    //     console.error("Error writing data: ", error);
-    //     alert("伺服器發生錯誤，請稍後再試\n錯誤訊息: " + error.message);
-    // });
 }
