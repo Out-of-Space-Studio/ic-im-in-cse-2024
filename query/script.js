@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // datas to get
-window.check_form = async function () {
+window.query = async function () {
     const form = document.getElementById("FORM");
 
     const fields = {
