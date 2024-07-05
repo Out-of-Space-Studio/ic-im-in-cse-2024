@@ -57,17 +57,7 @@ window.query = async function () {
 
     const fields = {
         SID: "學號",
-        NAME: "姓名",
-        GENDER: "性別",
-        DIET: "飲食習慣",
-        ALLERGY: "過敏食物",
-        IDNumber: "身分證字號",
-        BIRTH: "生日",
-        phoneNumber: "電話",
-        CLOTHINGSIZE: "衣服尺寸",
-        ICEName: "緊急聯絡人姓名",
-        ICERelationship: "與緊急聯絡人關係",
-        ICEPhoneNumber: "緊急聯絡人電話",
+        IDNumber: "身分證字號"
     };
 
     let emptyFields = [];
@@ -171,6 +161,7 @@ import {
     get,
     child,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
