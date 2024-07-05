@@ -168,8 +168,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import {
     getDatabase,
     ref,
-    set,
+    get,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import {
+    initializeAppCheck,
+    ReCaptchaV3Provider,
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app-check.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -197,36 +201,24 @@ const appCheck = initializeAppCheck(app, {
 
 async function readUserData(stu) {
     const db = getDatabase();
-    correctData= new Stu;
-    get(ref(db, `/students/${stu.sid}`), {
-        NAME: correctData.name,
-        GENDER: correctData.gender,
-        DIET: correctData.diet,
-        ALLERGY: correctData.allergy,
-        IDNUMBER: correctData.idnumber,
-        BIRTH: correctData.birth,
-        PHONE: correctData.phoneNumber,
-        SIZE: correctData.clothingSize,
-        EMGNAME: correctData.emgName,
-        EMGPHONE: correctData.emgPhoneNumber,
-        EMGRELATIONS: correctData.emgRelation,
-    })
-        .then(function () {
-            if(stu.idnumber===correctData.idnumber){
-
-
+    try {
+        const snapshot = await get(ref(db, `/students/${stu.sid}`));
+        if (snapshot.exists()) {
+            const correctData = snapshot.val();
+            if (stu.idnumber === correctData.IDNUMBER) {
                 console.log("Data correct.");
                 alert("報名成功");
                 window.location.href = "../index.html";
-            }
-            else{
-
+            } else {
                 console.log("Data wrong.");
-                alert("學號或昇分證字號錯誤");
+                alert("學號或身分證字號錯誤");
             }
-        })
-        .catch(function (error) {
-            console.error("Error writing data: ", error);
-            alert("伺服器發生錯誤，請稍後再試\n錯誤訊息: " + error.message);
-        });
+        } else {
+            console.log("No data available");
+            alert("找不到該學號的資料");
+        }
+    } catch (error) {
+        console.error("Error reading data: ", error);
+        alert("伺服器發生錯誤，請稍後再試\n錯誤訊息: " + error.message);
+    }
 }
