@@ -198,8 +198,8 @@ async function readUserData(stu) {
             console.log(snapshot);
             if (snapshot.exists) {
                 alert("查詢成功");
-                console.log(snapshot.val());
-                const correctData = snapshot.val();
+                console.log(snapshot.value);
+                const correctData = snapshot.value;
                 if (stu.idnumber === correctData.IDNUMBER) {
                     console.log("Data correct.");
                     alert("報名成功");
