@@ -194,7 +194,8 @@ async function readUserData(stu) {
     const db = getDatabase();
     get(ref(db, `students/${stu.id}`))
         .then((snapshot) => {
-            alert("checkpoint1");
+            console.log(snapshot);
+            alert(snapshot);
             if (snapshot.exists()) {
                 alert("查詢成功");
                 console.log(snapshot.val());
