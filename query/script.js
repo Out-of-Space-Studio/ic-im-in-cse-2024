@@ -140,9 +140,9 @@ class Stu {
 
     async confirmInfo() {
         const isConfirm = window.confirm(
-            "請確認以下資訊是否正確\n 學號：" +
+            "請確認以下資訊是否正確\n學號：" +
                 this.sid +
-                "\n 身分證字號：" +
+                "\n身分證字號：" +
                 this.idnumber
         );
         if (isConfirm) {
@@ -198,14 +198,12 @@ async function readUserData(stu) {
                 console.log("Query Success");
                 console.log(correctData);
                 console.log(snapshot);
-                if (stu.idnumber == correctData.IDNUMBER) {
+                if (stu.idnumber === correctData.IDNUMBER) {
                     console.log("Data correct.");
                     alert("報名成功");
                     window.location.href = "../index.html";
                 } else {
                     console.log("Data wrong.");
-                    console.log(correctData.IDNUMBER);
-                    console.log(stu.idnumber);
                     alert("學號或身分證字號錯誤");
                 }
             } else {
