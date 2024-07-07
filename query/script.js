@@ -145,8 +145,6 @@ class Stu {
                 "\n 身分證字號：" +
                 this.idnumber
         );
-        console.log(isConfirm);
-        console.log("checkpoint01");
         if (isConfirm) {
             await readUserData(this);
         }
@@ -192,10 +190,12 @@ const appCheck = initializeAppCheck(app, {
 
 async function readUserData(stu) {
     const db = getDatabase();
-    get(ref(db, `students/${stu.id}`))
+    // get(ref(db, `students/${stu.id}`))
+    const dbref= ref(db);
+    get(child(dbref, `students/${stu.id}`))
         .then((snapshot) => {
-            console.log(snapshot);
-            alert(snapshot);
+            alert(snapshot.val());
+            console.log(snapshot.val());
             if (snapshot.exists()) {
                 alert("查詢成功");
                 console.log(snapshot.val());
