@@ -198,7 +198,7 @@ async function readUserData(stu) {
                 alert("查詢成功");
                 const correctData = snapshot.val;
                 console.log(correctData);
-                console.log(snapshot.val());
+                console.log(snapshot);
                 if (stu.idnumber == correctData.IDNUMBER) {
                     console.log("Data correct.");
                     alert("報名成功");
