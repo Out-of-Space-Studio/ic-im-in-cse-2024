@@ -140,9 +140,9 @@ class Stu {
 
     async confirmInfo() {
         const isConfirm = window.confirm(
-            "請確認以下資訊是否正確\n學號：" +
+            "請確認以下資訊是否正確\n 學號：" +
                 this.sid +
-                "\n身分證字號：" +
+                "\n 身分證字號：" +
                 this.idnumber
         );
         if (isConfirm) {
@@ -189,7 +189,7 @@ const appCheck = initializeAppCheck(app, {
 });
 
 async function readUserData(stu) {
-    const dbref= ref(getDatabase());
+    const dbref = ref(getDatabase());
     get(child(dbref, `students/${stu.sid}`))
         .then((snapshot) => {
             if (snapshot.exists()) {
@@ -200,7 +200,30 @@ async function readUserData(stu) {
                 console.log(snapshot);
                 if (stu.idnumber === correctData.IDNUMBER) {
                     console.log("Data correct.");
-                    alert("報名成功");
+                    alert(
+                        "以下資訊為您的報名資料\n 學號：" +
+                            this.sid +
+                            "\n 姓名：" +
+                            this.name +
+                            "\n 性別：" +
+                            this.gender +
+                            "\n 葷素：" +
+                            this.diet +
+                            "\n 身分證字號：" +
+                            this.idnumber +
+                            "\n 生日：" +
+                            this.birth +
+                            "\n 聯絡電話：" +
+                            this.phoneNumber +
+                            "\n 衣服尺寸：" +
+                            this.clothingSize +
+                            "\n 緊急聯絡人姓名：" +
+                            this.emgName +
+                            "\n 與緊急聯絡人關係：" +
+                            this.emgRelation +
+                            "\n 緊急聯絡人電話：" +
+                            this.emgPhoneNumber
+                    );
                     window.location.href = "../index.html";
                 } else {
                     console.log("Data wrong.");
