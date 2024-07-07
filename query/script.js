@@ -196,7 +196,7 @@ async function readUserData(stu) {
         .then((snapshot) => {
             alert(snapshot);
             console.log(snapshot);
-            if (snapshot.exists()) {
+            if (snapshot.exists) {
                 alert("查詢成功");
                 console.log(snapshot.val());
                 const correctData = snapshot.val();
