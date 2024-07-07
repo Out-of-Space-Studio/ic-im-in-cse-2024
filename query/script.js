@@ -194,18 +194,17 @@ async function readUserData(stu) {
     const dbref= ref(db);
     get(child(dbref, `students/${stu.id}`))
         .then((snapshot) => {
-            alert(snapshot);
-            console.log(snapshot);
             if (snapshot.exists) {
                 alert("查詢成功");
-                console.log(snapshot.val);
                 const correctData = snapshot.val;
-                if (stu.idnumber === correctData.IDNUMBER) {
+                if (stu.idnumber == correctData.IDNUMBER) {
                     console.log("Data correct.");
                     alert("報名成功");
                     window.location.href = "../index.html";
                 } else {
                     console.log("Data wrong.");
+                    console.log(correctData.IDNUMBER);
+                    console.log(stu.idnumber);
                     alert("學號或身分證字號錯誤");
                 }
             } else {
