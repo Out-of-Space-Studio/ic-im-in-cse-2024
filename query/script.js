@@ -191,12 +191,13 @@ const appCheck = initializeAppCheck(app, {
 async function readUserData(stu) {
     const db = getDatabase();
     // get(ref(db, `students/${stu.id}`))
-    const dbref= ref(db);
-    get(child(dbref, `students/${stu.id}`))
+    const dbref= ref(getDatabase());
+    get(child(dbref, `students/${stu.sid}`))
         .then((snapshot) => {
-            if (snapshot.exists) {
+            if (snapshot.exists()) {
                 alert("查詢成功");
-                const correctData = snapshot.val;
+                const correctData = snapshot.val();
+                console.log("Query Success");
                 console.log(correctData);
                 console.log(snapshot);
                 if (stu.idnumber == correctData.IDNUMBER) {
