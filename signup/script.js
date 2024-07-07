@@ -51,6 +51,23 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Back to top button functionality initialized");
 });
 
+window.showImage = function(src) {
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = src;
+    console.log("Clothing size list showed");
+}
+
+window.closeImage = function(event) {
+    var modal = document.getElementById("imageModal");
+    if (event.target === modal || event.target.className === "close") {
+        modal.style.display = "none";
+    }
+    console.log("Clothing size list closed");
+}
+
+
 // datas to set
 window.check_form = async function () {
     const form = document.getElementById("FORM");
@@ -173,10 +190,12 @@ class Stu {
                 "\n 緊急聯絡人電話：" +
                 this.emgPhoneNumber
         );
-        console.log(isConfirm);
-        console.log("checkpoint01");
         if (isConfirm) {
             await writeUserData(this);
+        }
+        else{
+
+            await alert("你已取消送出報名表單!");
         }
     }
 }
