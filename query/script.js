@@ -202,7 +202,7 @@ async function readUserData(stu) {
                     console.log("Data correct.");
                     alert(
                         "以下資訊為您的報名資料\n 學號：" +
-                            correctData.SID +
+                            stu.sid +
                             "\n 姓名：" +
                             correctData.NAME +
                             "\n 性別：" +
@@ -216,7 +216,7 @@ async function readUserData(stu) {
                             "\n 聯絡電話：" +
                             correctData.PHONE +
                             "\n 衣服尺寸：" +
-                            correctData.CLOTHINGSIZE +
+                            correctData.SIZE +
                             "\n 緊急聯絡人姓名：" +
                             correctData.EMGNAME +
                             "\n 與緊急聯絡人關係：" +
