@@ -92,17 +92,16 @@ window.query = async function () {
 
     const student = new Stu(
         form.SID.value,
-        form.NAME.value,
-        form.GENDER.value,
-        form.DIET.value,
-        form.ALLERGY.value,
+        null,
+        null,
+        null,
         form.IDNumber.value,
-        form.BIRTH.value,
-        form.phoneNumber.value,
-        form.CLOTHINGSIZE.value,
-        form.ICEName.value,
-        form.ICERelationship.value,
-        form.ICEPhoneNumber.value
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
     );
 
     await student.confirmInfo();
