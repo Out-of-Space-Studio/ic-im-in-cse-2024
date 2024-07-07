@@ -194,8 +194,8 @@ async function readUserData(stu) {
     const dbref= ref(db);
     get(child(dbref, `students/${stu.id}`))
         .then((snapshot) => {
-            alert(snapshot.val());
-            console.log(snapshot.val());
+            alert(snapshot);
+            console.log(snapshot);
             if (snapshot.exists()) {
                 alert("查詢成功");
                 console.log(snapshot.val());
