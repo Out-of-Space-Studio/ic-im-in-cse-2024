@@ -202,27 +202,27 @@ async function readUserData(stu) {
                     console.log("Data correct.");
                     alert(
                         "以下資訊為您的報名資料\n 學號：" +
-                            this.sid +
+                            correctData.sid +
                             "\n 姓名：" +
-                            this.name +
+                            correctData.name +
                             "\n 性別：" +
-                            this.gender +
+                            correctData.gender +
                             "\n 葷素：" +
-                            this.diet +
+                            correctData.diet +
                             "\n 身分證字號：" +
-                            this.idnumber +
+                            correctData.idnumber +
                             "\n 生日：" +
-                            this.birth +
+                            correctData.birth +
                             "\n 聯絡電話：" +
-                            this.phoneNumber +
+                            correctData.phoneNumber +
                             "\n 衣服尺寸：" +
-                            this.clothingSize +
+                            correctData.clothingSize +
                             "\n 緊急聯絡人姓名：" +
-                            this.emgName +
+                            correctData.emgName +
                             "\n 與緊急聯絡人關係：" +
-                            this.emgRelation +
+                            correctData.emgRelation +
                             "\n 緊急聯絡人電話：" +
-                            this.emgPhoneNumber
+                            correctData.emgPhoneNumber
                     );
                     window.location.href = "../index.html";
                 } else {
