@@ -189,8 +189,6 @@ const appCheck = initializeAppCheck(app, {
 });
 
 async function readUserData(stu) {
-    const db = getDatabase();
-    // get(ref(db, `students/${stu.id}`))
     const dbref= ref(getDatabase());
     get(child(dbref, `students/${stu.sid}`))
         .then((snapshot) => {
