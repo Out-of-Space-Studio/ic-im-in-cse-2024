@@ -1,14 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
     // to close the navbar stuff
     document.addEventListener("click", function (event) {
         var header = document.querySelector(".header");
         var isClickInside = header.contains(event.target);
         var menuBtn = document.getElementById("menu-btn");
-        var menu = document.querySelector('.menu');
+        var menu = document.querySelector(".menu");
 
         if (!isClickInside && menuBtn.checked) {
             menuBtn.checked = false;
-            menu.style.display = 'none';
+            menu.style.display = "none";
         }
     });
 
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 var menuBtn = document.getElementById("menu-btn");
                 if (menuBtn.checked) {
                     menuBtn.checked = false;
-                    document.querySelector('.menu').style.display = 'none';
+                    document.querySelector(".menu").style.display = "none";
                 }
             }
         });
@@ -33,20 +33,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Header scroll effect
     var header = document.querySelector(".header");
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 50) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    });
+    if (header) {
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    } else {
+        console.error("Header element not found");
+    }
 
     // Toggle menu visibility when checkbox is changed
     var menuBtn = document.getElementById("menu-btn");
-    var menu = document.querySelector('.menu');
-    menuBtn.addEventListener('change', function() {
-        menu.style.display = this.checked ? 'block' : 'none';
+    var menu = document.querySelector(".menu");
+    menuBtn.addEventListener("change", function () {
+        menu.style.display = this.checked ? "block" : "none";
     });
 
-    console.log('Header script loaded and running');
+    console.log("Header script loaded and running");
 });
