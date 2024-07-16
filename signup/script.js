@@ -14,6 +14,29 @@ window.closeImage = function (event) {
     console.log("Clothing size list closed");
 };
 
+const GENDER2TXT = {
+    BOY: "男",
+    GIRL: "女",
+    NONBIN: "非二元性別",
+};
+
+const DIET2TXT = {
+    NORMAL: "葷",
+    VEGAN: "全素",
+    VEGETARIAN: "蛋奶素",
+    "OVO-VEGAN": "蛋素",
+    "LACTO-VEGAN": "奶素",
+    "NO-MEAT": "五辛素",
+};
+
+const RELATION2TXT = {
+    FATHER: "父",
+    MOTHER: "母",
+    GRANDFATHER: "爺爺/外公",
+    GRANDMOTHER: "奶奶/外婆",
+    OTHERS: "其他",
+};
+
 // datas to set
 window.check_form = async function () {
     const form = document.getElementById("FORM");
@@ -105,9 +128,9 @@ class Stu {
                 "\n 姓名：" +
                 this.name +
                 "\n 性別：" +
-                this.gender +
+                GENDER2TXT[this.gender] +
                 "\n 葷素：" +
-                this.diet +
+                DIET2TXT[this.diet] +
                 "\n 身分證字號：" +
                 this.idnumber +
                 "\n 生日：" +
@@ -119,7 +142,7 @@ class Stu {
                 "\n 緊急聯絡人姓名：" +
                 this.emgName +
                 "\n 與緊急聯絡人關係：" +
-                this.emgRelation +
+                RELATION2TXT[this.emgRelation] +
                 "\n 緊急聯絡人電話：" +
                 this.emgPhoneNumber
         );

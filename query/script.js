@@ -51,6 +51,29 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Back to top button functionality initialized");
 });
 
+const GENDER2TXT = {
+    BOY: "男",
+    GIRL: "女",
+    NONBIN: "非二元性別",
+};
+
+const DIET2TXT = {
+    NORMAL: "葷",
+    VEGAN: "全素",
+    VEGETARIAN: "蛋奶素",
+    "OVO-VEGAN": "蛋素",
+    "LACTO-VEGAN": "奶素",
+    "NO-MEAT": "五辛素",
+};
+
+const RELATION2TXT = {
+    FATHER: "父",
+    MOTHER: "母",
+    GRANDFATHER: "爺爺/外公",
+    GRANDMOTHER: "奶奶/外婆",
+    OTHERS: "其他",
+};
+
 // datas to get
 window.query = async function () {
     const form = document.getElementById("FORM");
@@ -185,9 +208,9 @@ async function readUserData(stu) {
                             "\n 姓名：" +
                             correctData.NAME +
                             "\n 性別：" +
-                            correctData.GENDER +
+                            GENDER2TXT[correctData.GENDER] +
                             "\n 葷素：" +
-                            correctData.DIET +
+                            DIET2TXT[correctData.DIET] +
                             "\n 身分證字號：" +
                             correctData.IDNUMBER +
                             "\n 生日：" +
@@ -199,7 +222,7 @@ async function readUserData(stu) {
                             "\n 緊急聯絡人姓名：" +
                             correctData.EMGNAME +
                             "\n 與緊急聯絡人關係：" +
-                            correctData.EMGRELATIONS +
+                            RELATION2TXT[correctData.EMGRELATIONS] +
                             "\n 緊急聯絡人電話：" +
                             correctData.EMGPHONE
                     );
