@@ -1,4 +1,3 @@
-
 window.showImage = function(src) {
     var modal = document.getElementById("imageModal");
     var modalImg = document.getElementById("modalImage");
