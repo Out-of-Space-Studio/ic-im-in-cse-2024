@@ -182,7 +182,7 @@ const appCheck = initializeAppCheck(app, {
 
 async function writeUserData(stu) {
     const db = getDatabase();
-    const dt = new Date().toISOString();
+    const dt = new Date().toString();
     set(ref(db, `/students/${stu.sid}`), {
         NAME: stu.name,
         GENDER: stu.gender,
