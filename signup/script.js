@@ -232,7 +232,7 @@ async function writeUserData(stu) {
 // ID Verfication
 function verifyId(id) {
     id = id.trim();
-    verification = id.match("^[A-Z][12]\\d{8}$");
+    const verification = id.match("^[A-Z][12]\\d{8}$");
     if (!verification) {
         return false;
     }
