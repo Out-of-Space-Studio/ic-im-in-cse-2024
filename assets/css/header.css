@@ -23,10 +23,6 @@
     filter: brightness(0) invert(1);
 }
 
-.header.scrolled {
-    background-color: rgba(44, 62, 80, 0.95);
-}
-
 .header ul {
     margin: 0;
     padding: 0;
@@ -109,7 +105,7 @@
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
     background: #ecf0f1;
-    content: "";
+    content: "▼";
     display: block;
     height: 100%;
     position: absolute;
@@ -148,6 +144,46 @@
 .header .menu-icon .navicon:after {
     top: -5px;
 }
+
+/* Dropdown styles */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 20px 20px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.drop-down {
+    display: none;
+    position: absolute;
+    background-color: #34495e;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.drop-down a {
+    float: none;
+    color: #ecf0f1;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .drop-down {
+    display: block;
+}
+
 @media screen and (min-width: 72em) {
     .header {
         max-height: 5em;
@@ -185,5 +221,22 @@
     .header .menu-btn:checked ~ .menu {
         max-height: 100vh;
         background-color: #2c3e50;
+    }
+}
+
+@media screen and (max-width: 72em) {
+    .dropdown .dropbtn {
+        display: none;
+    }
+    .dropdown {
+        float: none;
+    }
+    .drop-down {
+        position: relative;
+    }
+    .dropdown .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: left;
     }
 }
