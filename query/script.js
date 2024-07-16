@@ -195,7 +195,6 @@ async function readUserData(stu) {
     get(child(dbref, `students/${stu.sid}`))
         .then((snapshot) => {
             if (snapshot.exists()) {
-                alert("查詢成功");
                 const correctData = snapshot.val();
                 console.log("Query Success");
                 console.log(correctData);
@@ -221,7 +220,7 @@ async function readUserData(stu) {
                             correctData.SIZE +
                             "\n 緊急聯絡人姓名：" +
                             correctData.EMGNAME +
-                            "\n 與緊急聯絡人關係：" +
+                            "\n 與學員之關係：" +
                             RELATION2TXT[correctData.EMGRELATIONS] +
                             "\n 緊急聯絡人電話：" +
                             correctData.EMGPHONE

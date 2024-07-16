@@ -141,7 +141,7 @@ class Stu {
                 this.clothingSize +
                 "\n 緊急聯絡人姓名：" +
                 this.emgName +
-                "\n 與緊急聯絡人關係：" +
+                "\n 與學員之關係：" +
                 RELATION2TXT[this.emgRelation] +
                 "\n 緊急聯絡人電話：" +
                 this.emgPhoneNumber
