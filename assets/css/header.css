@@ -100,7 +100,7 @@
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
     background: #ecf0f1;
-    content: "▼";
+    content: "";
     display: block;
     height: 100%;
     position: absolute;

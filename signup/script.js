@@ -177,6 +177,11 @@ import {
     set,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
+import {
+    initializeAppCheck,
+    ReCaptchaV3Provider,
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app-check.js";
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCPh9Hg4qFMyrP_7nchVGTvM-qQKSUa6JE",
@@ -250,4 +255,4 @@ function verifyId(id) {
     }
 
     return checkSum % 10 == 0;
-};
+}
