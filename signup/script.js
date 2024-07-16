@@ -230,7 +230,7 @@ async function writeUserData(stu) {
 }
 
 // ID Verfication
-window.verifyId = async function (id) {
+async function verifyId(id) {
     id = id.trim();
     verification = id.match("^[A-Z][12]\\d{8}$");
     if (!verification) {
