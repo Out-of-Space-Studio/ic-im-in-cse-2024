@@ -242,7 +242,7 @@ function verifyId(id) {
 
     id = String(conver.indexOf(id[0]) + 10) + id.slice(1);
 
-    const checkSum = 0;
+    let checkSum = 0;
     for (let i = 0; i < id.length; i++) {
         const c = parseInt(id[i]);
         const w = weights[i];
