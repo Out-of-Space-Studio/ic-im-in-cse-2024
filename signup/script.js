@@ -182,7 +182,7 @@ const appCheck = initializeAppCheck(app, {
 
 async function writeUserData(stu) {
     const db = getDatabase();
-    const dt = new Date();
+    const dt = new Date().toISOString();
     set(ref(db, `/students/${stu.sid}`), {
         NAME: stu.name,
         GENDER: stu.gender,
@@ -195,7 +195,7 @@ async function writeUserData(stu) {
         EMGNAME: stu.emgName,
         EMGPHONE: stu.emgPhoneNumber,
         EMGRELATIONS: stu.emgRelation,
-        DATE: dt,
+        TIMESTAMP: dt,
     })
         .then(function () {
             console.log("Data written successfully");
