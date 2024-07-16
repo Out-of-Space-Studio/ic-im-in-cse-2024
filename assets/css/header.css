@@ -12,11 +12,6 @@
     max-height: 5em;
 }
 
-.header .logo {
-    display: block;
-    float: left;
-    padding: 10px 20px;
-}
 .header .logo img {
     height: 40px;
     width: auto;
@@ -235,7 +230,7 @@
         position: relative;
     }
     .dropdown .dropbtn {
-        display: block;
+        /* display: block; */
         width: 100%;
         text-align: left;
     }

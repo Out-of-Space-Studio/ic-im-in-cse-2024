@@ -1,56 +1,58 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // to close the navbar stuff
-    document.addEventListener("click", function (event) {
-        var header = document.querySelector(".header");
-        var isClickInside = header.contains(event.target);
-        var menuBtn = document.getElementById("menu-btn");
-        var menu = document.querySelector(".menu");
+    const header = document.querySelector(".header");
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.querySelector(".menu");
 
-        if (!isClickInside && menuBtn.checked) {
-            menuBtn.checked = false;
-            menu.style.display = "none";
+    // Close navbar when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!header.contains(event.target) && menuBtn.checked) {
+            closeMenu();
         }
     });
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: "smooth",
-                });
-                // Close menu after clicking a link (for mobile)
-                var menuBtn = document.getElementById("menu-btn");
-                if (menuBtn.checked) {
-                    menuBtn.checked = false;
-                    document.querySelector(".menu").style.display = "none";
-                }
-            }
-        });
+        anchor.addEventListener("click", handleAnchorClick);
     });
 
     // Header scroll effect
-    var header = document.querySelector(".header");
     if (header) {
-        window.addEventListener("scroll", function () {
-            if (window.scrollY > 50) {
-                header.classList.add("scrolled");
-            } else {
-                header.classList.remove("scrolled");
-            }
-        });
+        window.addEventListener("scroll", handleHeaderScroll);
     } else {
         console.error("Header element not found");
     }
 
-    // Toggle menu visibility when checkbox is changed
-    var menuBtn = document.getElementById("menu-btn");
-    var menu = document.querySelector(".menu");
-    menuBtn.addEventListener("change", function () {
-        menu.style.display = this.checked ? "block" : "none";
-    });
+    // Toggle menu visibility
+    menuBtn.addEventListener("change", toggleMenu);
 
     console.log("Header script loaded and running");
 });
+
+function closeMenu() {
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.querySelector(".menu");
+    menuBtn.checked = false;
+    menu.style.display = "none";
+}
+
+function handleAnchorClick(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+        const menuBtn = document.getElementById("menu-btn");
+        if (menuBtn.checked) {
+            closeMenu();
+        }
+    }
+}
+
+function handleHeaderScroll() {
+    const header = document.querySelector(".header");
+    header.classList.toggle("scrolled", window.scrollY > 50);
+}
+
+function toggleMenu() {
+    const menu = document.querySelector(".menu");
+    menu.style.display = this.checked ? "block" : "none";
+}

@@ -90,52 +90,29 @@ window.query = async function () {
         return;
     }
 
-    const student = new Stu(
-        form.SID.value,
-        null,
-        null,
-        null,
-        null,
-        form.IDNumber.value,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-    );
+    const student = new Stu({
+        sid: form.SID.value,
+        idnumber: form.IDNumber.value,
+    });
 
     await student.confirmInfo();
 };
 
 // db stuff
 class Stu {
-    constructor(
-        sid,
-        name,
-        gender,
-        diet,
-        allergy,
-        idnumber,
-        birth,
-        phoneNumber,
-        clothingSize,
-        emgName,
-        emgRelation,
-        emgPhoneNumber
-    ) {
-        this.sid = sid;
-        this.name = name;
-        this.gender = gender;
-        this.diet = diet;
-        this.allergy = allergy;
-        this.idnumber = idnumber;
-        this.birth = birth;
-        this.phoneNumber = phoneNumber;
-        this.clothingSize = clothingSize;
-        this.emgName = emgName;
-        this.emgRelation = emgRelation;
-        this.emgPhoneNumber = emgPhoneNumber;
+    constructor(studentData) {
+        this.sid = studentData.sid;
+        this.name = studentData.name;
+        this.gender = studentData.gender;
+        this.diet = studentData.diet;
+        this.allergy = studentData.allergy;
+        this.idnumber = studentData.idnumber;
+        this.birth = studentData.birth;
+        this.phoneNumber = studentData.phoneNumber;
+        this.clothingSize = studentData.clothingSize;
+        this.emgName = studentData.emgName;
+        this.emgRelation = studentData.emgRelation;
+        this.emgPhoneNumber = studentData.emgPhoneNumber;
     }
 
     async confirmInfo() {
@@ -147,6 +124,8 @@ class Stu {
         );
         if (isConfirm) {
             await readUserData(this);
+        } else {
+            alert("你已取消查詢報名資料!");
         }
     }
 }

@@ -1,19 +1,18 @@
-window.showImage = function(src) {
-    var modal = document.getElementById("imageModal");
-    var modalImg = document.getElementById("modalImage");
+window.showImage = function (src) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
     modal.style.display = "block";
     modalImg.src = src;
     console.log("Clothing size list showed");
-}
+};
 
-window.closeImage = function(event) {
-    var modal = document.getElementById("imageModal");
+window.closeImage = function (event) {
+    const modal = document.getElementById("imageModal");
     if (event.target === modal || event.target.className === "close") {
         modal.style.display = "none";
     }
     console.log("Clothing size list closed");
-}
-
+};
 
 // datas to set
 window.check_form = async function () {
@@ -64,52 +63,39 @@ window.check_form = async function () {
         return;
     }
 
-    const student = new Stu(
-        form.SID.value,
-        form.NAME.value,
-        form.GENDER.value,
-        form.DIET.value,
-        form.ALLERGY.value,
-        form.IDNumber.value,
-        form.BIRTH.value,
-        form.phoneNumber.value,
-        form.CLOTHINGSIZE.value,
-        form.ICEName.value,
-        form.ICERelationship.value,
-        form.ICEPhoneNumber.value
-    );
+    const student = new Stu({
+        sid: form.SID.value,
+        name: form.NAME.value,
+        gender: form.GENDER.value,
+        diet: form.DIET.value,
+        allergy: form.ALLERGY.value,
+        idnumber: form.IDNumber.value,
+        birth: form.BIRTH.value,
+        phoneNumber: form.phoneNumber.value,
+        clothingSize: form.CLOTHINGSIZE.value,
+        emgName: form.ICEName.value,
+        emgRelation: form.ICERelationship.value,
+        emgPhoneNumber: form.ICEPhoneNumber.value,
+    });
 
     await student.confirmInfo();
 };
 
 // db stuff
 class Stu {
-    constructor(
-        sid,
-        name,
-        gender,
-        diet,
-        allergy,
-        idnumber,
-        birth,
-        phoneNumber,
-        clothingSize,
-        emgName,
-        emgRelation,
-        emgPhoneNumber
-    ) {
-        this.sid = sid;
-        this.name = name;
-        this.gender = gender;
-        this.diet = diet;
-        this.allergy = allergy;
-        this.idnumber = idnumber;
-        this.birth = birth;
-        this.phoneNumber = phoneNumber;
-        this.clothingSize = clothingSize;
-        this.emgName = emgName;
-        this.emgRelation = emgRelation;
-        this.emgPhoneNumber = emgPhoneNumber;
+    constructor(studentData) {
+        this.sid = studentData.sid;
+        this.name = studentData.name;
+        this.gender = studentData.gender;
+        this.diet = studentData.diet;
+        this.allergy = studentData.allergy;
+        this.idnumber = studentData.idnumber;
+        this.birth = studentData.birth;
+        this.phoneNumber = studentData.phoneNumber;
+        this.clothingSize = studentData.clothingSize;
+        this.emgName = studentData.emgName;
+        this.emgRelation = studentData.emgRelation;
+        this.emgPhoneNumber = studentData.emgPhoneNumber;
     }
 
     async confirmInfo() {
@@ -139,10 +125,8 @@ class Stu {
         );
         if (isConfirm) {
             await writeUserData(this);
-        }
-        else{
-
-            await alert("你已取消送出報名表單!");
+        } else {
+            alert("你已取消送出報名表單!");
         }
     }
 }
