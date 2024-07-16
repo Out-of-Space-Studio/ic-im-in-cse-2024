@@ -195,7 +195,7 @@ async function writeUserData(stu) {
         EMGNAME: stu.emgName,
         EMGPHONE: stu.emgPhoneNumber,
         EMGRELATIONS: stu.emgRelation,
-        DATE: d,
+        DATE: dt,
     })
         .then(function () {
             console.log("Data written successfully");
