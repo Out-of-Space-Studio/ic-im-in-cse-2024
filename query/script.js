@@ -147,7 +147,7 @@ class Stu {
         this.idnumber = studentData.idnumber;
         this.birth = studentData.birth;
         this.phoneNumber = studentData.phoneNumber;
-        this.clothingSize = studentData.clothingSize;
+        // this.clothingSize = studentData.clothingSize;
         this.emgName = studentData.emgName;
         this.emgRelation = studentData.emgRelation;
         this.emgPhoneNumber = studentData.emgPhoneNumber;
@@ -231,8 +231,8 @@ async function readUserData(stu) {
                             correctData.BIRTH +
                             "\n 聯絡電話：" +
                             correctData.PHONE +
-                            "\n 衣服尺寸：" +
-                            correctData.SIZE +
+                            // "\n 衣服尺寸：" +
+                            // correctData.SIZE +
                             "\n 緊急聯絡人姓名：" +
                             correctData.EMGNAME +
                             "\n 與學員之關係：" +
