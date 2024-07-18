@@ -70,7 +70,7 @@
             <nav class="menu">
                 <ul>
                     <li>
-                        <a href="./index.html">首頁</a>
+                        <a href="./index.html" style="display: none">首頁</a>
                     </li>
                     <li>
                         <a href="#story">劇情故事</a>
@@ -83,7 +83,9 @@
                         <div class="drop-down">
                             <a href="./signup/index.html">立即報名</a>
                             <a href="./query/index.html">報名查詢</a>
-                            <a href="./edit/index.html">報名更正</a>
+                            <a href="./edit/index.html" style="display: none"
+                                >報名更正</a
+                            >
                         </div>
                     </li>
                     <li>
@@ -96,9 +98,23 @@
 
         <div class="section home" id="home">
             <h1 class="title">腦資急轉彎X</h1>
-            <p class="subtitle">
-                Welcome to YZU College of Informatics Orientation
+            <p class="subtitle content">歡迎來到 2024 四資迎新 - 腦資急轉彎X</p>
+            <p class="subtitle content">
+                讓我們已一段前導片進入我們的腦內世界吧！
             </p>
+            <video controls class="video">
+                <source src="./Trailer.mp4" type="video/mp4" />
+            </video>
+
+            <iframe
+                src="https://www.youtube.com/embed/zefga5_GEyY?rel=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                class="video"
+            ></iframe>
         </div>
 
         <div class="section story" id="story">
@@ -110,12 +126,12 @@
         </div>
 
         <div class="section info" id="info">
-            <p class="title">活動資訊</p>
+            <h2 class="title">活動資訊</h2>
             Here is some of the infomations about this event.
         </div>
 
         <div class="section picture" id="picture">
-            <p class="title">活動紀錄</p>
+            <h2 class="title">活動紀錄</h2>
             (To be Continued...)
         </div>
         <!-- 頁尾 -->

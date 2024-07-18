@@ -50,7 +50,7 @@ window.check_form = async function () {
         IDNumber: "身分證字號",
         BIRTH: "生日",
         phoneNumber: "電話",
-        CLOTHINGSIZE: "衣服尺寸",
+        // CLOTHINGSIZE: "衣服尺寸",
         ICEName: "緊急聯絡人姓名",
         ICERelationship: "與緊急聯絡人關係",
         ICEPhoneNumber: "緊急聯絡人電話",
@@ -110,7 +110,7 @@ window.check_form = async function () {
         idnumber: form.IDNumber.value,
         birth: form.BIRTH.value,
         phoneNumber: form.phoneNumber.value,
-        clothingSize: form.CLOTHINGSIZE.value,
+        // clothingSize: form.CLOTHINGSIZE.value,
         emgName: form.ICEName.value,
         emgRelation: form.ICERelationship.value,
         emgPhoneNumber: form.ICEPhoneNumber.value,
@@ -130,7 +130,7 @@ class Stu {
         this.idnumber = studentData.idnumber;
         this.birth = studentData.birth;
         this.phoneNumber = studentData.phoneNumber;
-        this.clothingSize = studentData.clothingSize;
+        // this.clothingSize = studentData.clothingSize;
         this.emgName = studentData.emgName;
         this.emgRelation = studentData.emgRelation;
         this.emgPhoneNumber = studentData.emgPhoneNumber;
@@ -152,8 +152,8 @@ class Stu {
                 this.birth +
                 "\n 聯絡電話：" +
                 this.phoneNumber +
-                "\n 衣服尺寸：" +
-                this.clothingSize +
+                // "\n 衣服尺寸：" +
+                // this.clothingSize +
                 "\n 緊急聯絡人姓名：" +
                 this.emgName +
                 "\n 與學員之關係：" +
@@ -217,7 +217,7 @@ async function writeUserData(stu) {
         IDNUMBER: stu.idnumber,
         BIRTH: stu.birth,
         PHONE: stu.phoneNumber,
-        SIZE: stu.clothingSize,
+        // SIZE: stu.clothingSize,
         EMGNAME: stu.emgName,
         EMGPHONE: stu.emgPhoneNumber,
         EMGRELATIONS: stu.emgRelation,

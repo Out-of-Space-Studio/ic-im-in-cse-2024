@@ -2,6 +2,7 @@
 	section start
 */
 .section {
+    height: 100%;
     padding: 5rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -25,3 +26,15 @@
 /*
 	section end
 */
+
+.video {
+    width: 100%;
+    height: 56%;
+}
+
+@media screen and (max-width: 72em) {
+    .video {
+        align-items: center;
+        height: 550px;
+    }
+}
