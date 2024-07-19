@@ -2,25 +2,33 @@
 	section start
 */
 .section {
-    min-height: 100%;
+    min-height: 100vh;
     padding: 5rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex; /* Add flex display */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
+}
+
+.title {
+    margin: 0 0 2.1875rem 0;
+    font-size: 4rem;
+    width: 100%;
 }
 
 .subtitle {
-    font-size: 25px;
+    font-size: 1.5625rem;
     font-weight: bold;
-    margin: 25px 0px 25px 0px;
-}
-.title {
-    margin: 35px 0px 35px 0px;
-    font-size: 65px;
+    margin: 0 0 1.5625rem 0;
+    width: 100%;
+    float: left;
 }
 
 .content {
-    margin: 25px 0px 25px 0px;
-    font-size: 20px;
+    margin: 0 0 1.5625rem 0;
+    font-size: 1.25rem;
+    float: left;
 }
 
 @media screen and (max-width: 72em) {
@@ -28,7 +36,53 @@
         padding: 5rem 1rem;
     }
     .title {
-        font-size: 25px;
+        font-size: 3.125rem;
+    }
+    .subtitle {
+        font-size: 1.375rem;
+    }
+
+    .content {
+        font-size: 1.125rem;
+    }
+    .glitch {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 48em) {
+    .title {
+        font-size: 2.5rem; /* 40px */
+    }
+
+    .subtitle {
+        font-size: 1.25rem; /* 20px */
+    }
+
+    .content {
+        font-size: 1rem; /* 16px */
+    }
+
+    .glitch {
+        font-size: 3rem; /* 48px */
+    }
+}
+
+@media screen and (max-width: 30em) {
+    .title {
+        font-size: 2rem; /* 32px */
+    }
+
+    .subtitle {
+        font-size: 1.125rem; /* 18px */
+    }
+
+    .content {
+        font-size: 0.9375rem; /* 15px */
+    }
+
+    .glitch {
+        font-size: 2.5rem; /* 40px */
     }
 }
 /*
@@ -41,9 +95,106 @@ section end
     min-height: 550px;
 }
 
+.glitch {
+    max-width: 50%;
+    position: relative;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #000;
+    letter-spacing: 5px;
+    z-index: 1;
+    float: left;
+}
+
+.glitch:before,
+.glitch:after {
+    display: block;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+}
+
+.glitch:before {
+    animation: glitch-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+        infinite;
+    color: #00ffff;
+    z-index: -1;
+}
+
+.glitch:after {
+    animation: glitch-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse
+        both infinite;
+    color: #ff00ff;
+    z-index: -2;
+}
+
+@keyframes glitch-color {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-3px, 3px);
+    }
+
+    40% {
+        transform: translate(-3px, -3px);
+    }
+
+    60% {
+        transform: translate(3px, 3px);
+    }
+
+    80% {
+        transform: translate(3px, -3px);
+    }
+
+    to {
+        transform: translate(0);
+    }
+}
+
+.frame {
+    max-width: 50vh;
+    width: 50%;
+    height: 300px;
+    float: right;
+    margin-bottom: 35px;
+    --blur: 2px;
+    box-shadow: inset -1px 1px 6px 1px rgba(0, 0, 0, 0.24);
+    background: white;
+    align-items: center;
+    display: flex;
+    padding: 18px;
+    box-sizing: border-box;
+}
+.title-box {
+    margin-top: 25px;
+    position: relative;
+}
+.title-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 450px;
+    height: auto;
+}
+.text-bottom {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 50%;
+    margin-bottom: 15px;
+}
+
 @media screen and (max-width: 72em) {
     .video {
         align-items: center;
         height: 550px;
+    }
+    .frame {
+        height: auto;
     }
 }
