@@ -221,25 +221,59 @@ p.cursor::after {
     }
 }
 
-/* neon effect*/
-
-.neon {
-    text-align: center;
-    color: #fff;
-    font-size: 5em;
-    font-weight: 250;
-    position: relative;
-    letter-spacing: 4px;
-    animation: neon 1s ease-in-out infinite alternate;
+/* Event */
+.event-container {
+    width: 100%;
+    padding: 2rem 0;
 }
 
-@keyframes neon {
-    from {
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0ff,
-            0 0 35px #0ff, 0 0 40px #0ff, 0 0 50px #0ff;
+.event-titles {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.event-title {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 0.5rem;
+    border-radius: 10px 10px 0 0;
+    transition: all 0.3s ease;
+}
+
+.event-title:hover,
+.event-title.active {
+    background-color: #555;
+    transform: translateY(-5px);
+}
+
+.event-contents {
+    background-color: #f5f5f5;
+    border-radius: 0 0 10px 10px;
+    padding: 1rem;
+    min-height: 200px;
+}
+
+.event-content {
+    display: none;
+}
+
+.event-content.active {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .event-titles {
+        flex-direction: column;
     }
-    to {
-        text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0ff, 0 0 35px #0ff,
-            0 0 40px #0ff, 0 0 50px #0ff, 0 0 75px #0ff;
+
+    .event-title {
+        margin: 0.5rem 0;
     }
 }
