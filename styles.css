@@ -93,6 +93,7 @@ section end
     width: 100%;
     height: auto;
     min-height: 550px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .glitch {
@@ -107,6 +108,7 @@ section end
     float: left;
     text-align: center;
     align-items: center;
+    text-shadow: 1px 1px 1px #000;
 }
 
 .glitch:before,
@@ -245,6 +247,7 @@ p.cursor::after {
     margin: 0 0.5rem;
     border-radius: 10px 10px 0 0;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .event-title:hover,
@@ -258,6 +261,7 @@ p.cursor::after {
     border-radius: 0 0 10px 10px;
     padding: 1rem;
     min-height: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .event-content {
@@ -276,4 +280,10 @@ p.cursor::after {
     .event-title {
         margin: 0.5rem 0;
     }
+}
+
+.drive-box {
+    height: 20rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 1rem 0 2rem 0;
 }
