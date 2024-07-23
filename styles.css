@@ -168,7 +168,7 @@ section end
     position: absolute;
     margin-top: 25px;
     position: relative;
-    min-height: 35vh;
+    min-height: 30vh;
 }
 
 @media screen and (max-width: 72em) {
@@ -234,7 +234,7 @@ p.cursor::after {
 }
 
 .event-title {
-    background-color: #333;
+    background-color: #2c3e50;
     color: #fff;
     padding: 1rem;
     font-size: 1.2rem;
@@ -249,7 +249,7 @@ p.cursor::after {
 
 .event-title:hover,
 .event-title.active {
-    background-color: #555;
+    background-color: #405c79;
     transform: translateY(-5px);
 }
 
