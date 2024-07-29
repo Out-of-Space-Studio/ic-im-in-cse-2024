@@ -220,18 +220,85 @@
 }
 
 @media screen and (max-width: 72em) {
-    .dropdown .dropbtn {
-        display: none;
+    .header {
+        padding: 15px;
     }
+
+    .header .logo img {
+        height: 35px;
+    }
+
+    .header li a {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+
+    .header .menu {
+        top: 70px;
+    }
+
+    .header .menu-icon {
+        padding: 25px 15px;
+    }
+
+    .header .menu-icon .navicon {
+        width: 25px;
+        height: 3px;
+    }
+
+    .header .menu-icon .navicon:before,
+    .header .menu-icon .navicon:after {
+        height: 3px;
+    }
+
+    .header .menu-icon .navicon:before {
+        top: 7px;
+    }
+
+    .header .menu-icon .navicon:after {
+        top: -7px;
+    }
+
+    .dropdown .dropbtn {
+        font-size: 1.2rem;
+        padding: 15px;
+        display: none;
+        width: 100%;
+        text-align: left;
+    }
+
+    .drop-down a {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+
     .dropdown {
         float: none;
     }
     .drop-down {
         position: relative;
     }
-    .dropdown .dropbtn {
-        /* display: block; */
-        width: 100%;
-        text-align: left;
+}
+
+@media screen and (max-width: 430px) {
+    .header {
+        padding: 10px;
+    }
+
+    .header .logo img {
+        height: 30px;
+    }
+
+    .header li a {
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+
+    .header .menu {
+        top: 60px;
+    }
+
+    .header .menu-icon {
+        padding: 20px 10px;
     }
 }
