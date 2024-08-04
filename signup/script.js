@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const body = document.getElementById("container");
         const header = document.getElementById("header");
         const footer = document.getElementById("footer");
-        body.style.height = "100%";
-        body.style.maxHeight = "100%";
+        body.style.minHeight = null;
         if (header) header.style.display = "none";
         if (footer) footer.style.display = "none";
     }
