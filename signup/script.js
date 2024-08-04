@@ -56,7 +56,7 @@ const RELATION2TXT = {
 
 window.todo = async function () {
     check_form();
-    closeIframe();
+    // closeIframe();
 };
 
 // datas to set
@@ -137,7 +137,7 @@ window.check_form = async function () {
         emgRelation: form.ICERelationship.value,
         emgPhoneNumber: form.ICEPhoneNumber.value,
     });
-
+    closeIframe();
     await student.confirmInfo();
 };
 
