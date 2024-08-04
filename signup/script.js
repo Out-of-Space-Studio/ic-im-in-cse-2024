@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isEmbedded) {
         const header = document.getElementById("header");
         const footer = document.getElementById("footer");
-        const body = document.body;
+        const body = document.getElementById("container");
 
         if (header) header.style.display = "none";
         if (footer) footer.style.display = "none";
-        body.style.backgroundColor = "F5F5F5";
+        body.style.backgroundColor = "#F5F5F5";
     }
 });
 window.showImage = function (src) {
