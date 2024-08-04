@@ -37,6 +37,11 @@ const RELATION2TXT = {
     OTHERS: "其他",
 };
 
+window.todo = async function () {
+    closeIframe();
+    check_form();
+};
+
 // datas to set
 window.check_form = async function () {
     const form = document.getElementById("FORM");
@@ -255,4 +260,11 @@ function verifyId(id) {
     }
 
     return checkSum % 10 == 0;
+}
+
+// close iframe
+function closeIframe() {
+    const tag = document.getElementById("sign-up");
+    tag.style.display = "none";
+    console.log("iframe closed");
 }
