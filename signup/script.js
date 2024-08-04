@@ -2,13 +2,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("onloaded");
 
-    const tag = top.document.getElementById("sign-up");
-    if (tag) {
+    const isEmbedded = document.body.dataset.root === "true";
+
+    // const tag = window.parent.document.getElementById("sign-up");
+    if (isEmbedded) {
         const header = document.getElementById("header");
         const footer = document.getElementById("footer");
 
-        header.style.display = "none";
-        footer.style.display = "none";
+        if (header) header.style.display = "none";
+        if (footer) footer.style.display = "none";
     }
 });
 window.showImage = function (src) {
