@@ -1,3 +1,16 @@
+// close footer and header if iframe
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("onloaded");
+
+    const tag = top.document.getElementById("sign-up");
+    if (tag) {
+        const header = document.getElementById("header");
+        const footer = document.getElementById("footer");
+
+        header.style.display = "none";
+        footer.style.display = "none";
+    }
+});
 window.showImage = function (src) {
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
