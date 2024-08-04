@@ -5,10 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // const tag = window.parent.document.getElementById("sign-up");
     if (isEmbedded) {
-        const body = document.getElementById("container");
         const header = document.getElementById("header");
         const footer = document.getElementById("footer");
-        body.style.minHeight = null;
         if (header) header.style.display = "none";
         if (footer) footer.style.display = "none";
     }
