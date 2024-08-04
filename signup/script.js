@@ -55,8 +55,8 @@ const RELATION2TXT = {
 };
 
 window.todo = async function () {
-    closeIframe();
     check_form();
+    closeIframe();
 };
 
 // datas to set
