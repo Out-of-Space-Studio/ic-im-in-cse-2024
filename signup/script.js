@@ -1,6 +1,6 @@
 // close footer and header if iframe
 document.addEventListener("DOMContentLoaded", function () {
-    const isEmbedded = document.body.dataset.root === "true";
+    const isEmbedded = top.document.body.dataset.root == "true";
     console.log(isEmbedded);
 
     // const tag = window.parent.document.getElementById("sign-up");
