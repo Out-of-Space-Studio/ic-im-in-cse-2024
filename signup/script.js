@@ -137,7 +137,6 @@ window.check_form = async function () {
         emgRelation: form.ICERelationship.value,
         emgPhoneNumber: form.ICEPhoneNumber.value,
     });
-    closeIframe();
     await student.confirmInfo();
 };
 
@@ -248,6 +247,7 @@ async function writeUserData(stu) {
         .then(function () {
             console.log("Data written successfully");
             alert("報名成功");
+            closeIframe();
             window.location.href = "../index.html";
         })
         .catch(function (error) {
@@ -282,6 +282,8 @@ function verifyId(id) {
 // close iframe
 function closeIframe() {
     const tag = top.document.getElementById("sign-up");
-    tag.style.display = "none";
-    console.log("iframe closed");
+    if (tag) {
+        tag.style.display = "none";
+        console.log("iframe closed");
+    }
 }
