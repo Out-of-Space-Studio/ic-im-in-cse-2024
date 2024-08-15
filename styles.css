@@ -6,9 +6,9 @@
     padding: 5rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
-    display: flex; /* Add flex display */
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .title {
@@ -63,10 +63,6 @@
     .content {
         font-size: 1.125rem;
     }
-
-    .glitch {
-        font-size: 3.5rem;
-    }
 }
 
 @media screen and (max-width: 30em) {
@@ -80,10 +76,6 @@
 
     .content {
         font-size: 1rem;
-    }
-
-    .glitch {
-        font-size: 3rem;
     }
 }
 /*
@@ -103,6 +95,8 @@ section end
     margin: 135px;
     position: relative;
     transform: rotate(-5deg);
+    text-shadow: 0 0 35px rgba(255, 108, 98, 1), 0 0 35px rgba(254, 197, 126, 1),
+        0 0 35px rgba(250, 235, 102, 1), 0 0 35px rgba(198, 255, 124, 1);
 }
 .main-title {
     font-size: 72px;
@@ -135,7 +129,7 @@ section end
         height: auto;
     }
     .title-box {
-        min-height: 25vh;
+        min-height: 30vh;
         height: 25vh;
     }
 }
