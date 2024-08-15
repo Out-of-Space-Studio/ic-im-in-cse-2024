@@ -46,9 +46,6 @@
     .content {
         font-size: 1.25rem;
     }
-    .glitch {
-        font-size: 4.5rem;
-    }
 }
 
 @media screen and (max-width: 48em) {
@@ -129,8 +126,8 @@ section end
         height: auto;
     }
     .title-box {
-        min-height: 30vh;
-        height: 25vh;
+        min-height: 35vh;
+        height: 35vh;
     }
 }
 
