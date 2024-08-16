@@ -252,7 +252,16 @@ p.cursor::after {
     margin: 1rem 0 0 0;
 }
 
+.timetable-container {
+    height: 300px; /* Adjust this value as needed */
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 35px;
+}
+
 .timetable {
     margin-bottom: 35px;
-    height: auto;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }

@@ -2,15 +2,22 @@
     font-family: "IANSUI";
     src: URL("../Iansui-Regular.ttf") format("truetype");
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
 .calendar-container {
+    overflow: hidden;
     max-width: 100%;
     overflow-x: auto;
     background-color: #f8f9fa;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    scale: 1;
 }
 table {
+    transform-origin: top left;
     table-layout: fixed;
     width: max-content;
     min-width: 100%;
