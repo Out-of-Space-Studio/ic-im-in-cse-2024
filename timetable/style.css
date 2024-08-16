@@ -8,14 +8,15 @@
     background-color: #f8f9fa;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    scale: 1;
 }
-
 table {
     table-layout: fixed;
     width: max-content;
     min-width: 100%;
     border-collapse: collapse;
     font-family: "IANSUI";
+    height: 170px;
 }
 
 th,
