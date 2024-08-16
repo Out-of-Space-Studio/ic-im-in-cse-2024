@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "DELA";
+    src: URL("../../DelaGothicOne-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "IANSUI";
+    src: URL("../../Iansui-Regular.ttf") format("truetype");
+}
 html {
     font-size: 16px;
     scroll-behavior: smooth;
@@ -11,9 +19,13 @@ html {
 }
 
 body {
-    font-family: "Arial", sans-serif;
+    font-family: "IANSUI";
     line-height: 1.6;
     height: 100%;
+}
+
+table {
+    font-family: "IANSUI";
 }
 
 h1,

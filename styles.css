@@ -119,7 +119,8 @@ section end
 @media screen and (max-width: 72em) {
     .video {
         align-items: center;
-        height: 550px;
+        min-height: 50vh;
+        width: 80%;
     }
     .frame {
         height: auto;
