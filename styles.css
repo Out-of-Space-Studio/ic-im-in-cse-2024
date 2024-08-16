@@ -92,8 +92,7 @@ section end
     margin: 135px;
     position: relative;
     transform: rotate(-5deg);
-    text-shadow: 0 0 35px rgba(255, 108, 98, 1), 0 0 35px rgba(254, 197, 126, 1),
-        0 0 35px rgba(250, 235, 102, 1), 0 0 35px rgba(198, 255, 124, 1);
+    text-shadow: 1px 1px 2em #efab84, 2px 2px 1em #e9e3a5, 0 0 0.2em #c9dda2;
 }
 .main-title {
     font-size: 72px;
