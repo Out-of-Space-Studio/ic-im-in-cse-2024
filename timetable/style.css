@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "IANSUI";
+    src: URL("../Iansui-Regular.ttf") format("truetype");
+}
 .calendar-container {
     max-width: 100%;
     overflow-x: auto;
@@ -11,7 +15,7 @@ table {
     width: max-content;
     min-width: 100%;
     border-collapse: collapse;
-    font-family: "Arial", sans-serif;
+    font-family: "IANSUI";
 }
 
 th,
