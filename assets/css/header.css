@@ -9,13 +9,13 @@
     align-items: center;
     padding: 10px 20px;
     box-sizing: border-box;
-    max-height: 5em;
+    max-height: 6em;
 }
 
 .header .logo img {
-    height: 80px;
+    height: 60px;
     width: auto;
-    top: 50;
+    object-fit: contain;
 }
 
 .header ul {
