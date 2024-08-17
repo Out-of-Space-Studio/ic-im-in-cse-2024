@@ -6,7 +6,7 @@ let i = 0,
 
 // Typerwrite text content. Use a pipe to indicate the start of the second line "|".
 const textArray = [
-    "歡迎來到 2024 四資迎新 - 腦資急轉彎|讓我們已一段前導片進入我們的腦內世界吧！",
+    "歡迎來到 2024 四資迎新 - 腦資急轉彎|讓我們以一段前導片進入我們的腦內世界吧！",
 ];
 
 // Speed (in milliseconds) of typing.
