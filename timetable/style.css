@@ -10,7 +10,7 @@ body {
 }
 .calendar-container {
     overflow: hidden;
-    max-width: 100%;
+
     overflow-x: auto;
     background-color: #f8f9fa;
     border-radius: 8px;
@@ -20,7 +20,7 @@ table {
     transform-origin: top left;
     table-layout: fixed;
     width: max-content;
-    min-width: 100%;
+    width: 1050px;
     border-collapse: collapse;
     font-family: "IANSUI";
     height: 170px;
@@ -34,6 +34,7 @@ td {
     border: 1px solid #2c3e50;
     transition: background-color 0.3s ease;
     white-space: nowrap;
+    width: 70px;
 }
 
 th {
@@ -52,7 +53,7 @@ th {
     position: sticky;
     left: 0;
     z-index: 2;
-    width: 30%;
+    width: 100px;
 }
 
 .date:hover {
