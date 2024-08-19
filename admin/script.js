@@ -151,6 +151,8 @@ async function getUserData() {
             let students = [];
             snapshot.forEach((childSnapshot) => {
                 students.push(childSnapshot.val());
+                console.log(childSnapshot);
+                console.log(childSnapshot.val());
                 add2Table(childSnapshot.val());
             });
         })
