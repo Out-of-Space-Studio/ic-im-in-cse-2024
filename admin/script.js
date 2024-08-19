@@ -67,12 +67,14 @@ window.query = async function () {
 
     await user.verify();
 };
-class user {
+class User {
     constructor(userData) {
         this.account = userData.account;
         this.pwd = userData.pwd;
     }
-    async verify() {}
+    async verify() {
+        readAdminData(this);
+    }
 }
 // db stuff
 class Stu {
