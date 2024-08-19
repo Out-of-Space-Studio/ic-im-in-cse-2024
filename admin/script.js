@@ -151,7 +151,7 @@ async function getUserData() {
             let students = [];
             snapshot.forEach((childSnapshot) => {
                 students.push(childSnapshot.val());
-                alert(childSnapshot.val());
+                add2Table(childSnapshot.val());
             });
         })
         .catch((error) => {
@@ -238,4 +238,28 @@ async function readUserData(stu) {
             console.error("Error reading data: ", error);
             alert("伺服器發生錯誤，請稍後再試\n錯誤訊息: " + error.message);
         });
+}
+
+function add2Table(studentData) {
+    const tableBody = document.getElementById("studentTableBody");
+    const row = tableBody.insertRow();
+
+    const cellData = [
+        studentData.sid,
+        studentData.NAME,
+        GENDER2TXT[studentData.GENDER],
+        DIET2TXT[studentData.DIET],
+        studentData.ALLERGY || "-",
+        studentData.IDNUMBER,
+        studentData.BIRTH,
+        studentData.PHONE,
+        studentData.EMGNAME,
+        RELATION2TXT[studentData.EMGRELATIONS],
+        studentData.EMGPHONE,
+    ];
+
+    cellData.forEach((data) => {
+        const cell = row.insertCell();
+        cell.textContent = data;
+    });
 }
