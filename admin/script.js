@@ -157,6 +157,7 @@ async function getUserData() {
                     Object.keys(snapshot.val())[count],
                     childSnapshot.val()
                 );
+                count++;
             });
         })
         .catch((error) => {
