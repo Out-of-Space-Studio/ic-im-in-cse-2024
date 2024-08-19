@@ -148,16 +148,11 @@ async function getUserData() {
     const dbref = ref(getDatabase());
     get(child(dbref, `students`))
         .then((snapshot) => {
-            if (snapshot.exists()) {
-                let students = [];
-                snapshot.forEach((childSnapshot) => {
-                    students.push(childSnapshot.val());
-                    alert(childSnapshot.val());
-                });
-            } else {
-                console.log("No data available");
-                alert("找不到該帳號的資料");
-            }
+            let students = [];
+            snapshot.forEach((childSnapshot) => {
+                students.push(childSnapshot.val());
+                alert(childSnapshot.val());
+            });
         })
         .catch((error) => {
             console.error("Error reading data: ", error);
@@ -178,7 +173,7 @@ async function checkAdminData(user) {
                     console.log("Login corrected.");
                     alert("登入成功");
                     getUserData();
-                    window.location.href = "../index.html";
+                    // window.location.href = "../index.html";
                 } else {
                     console.log("Data wrong.");
                     alert("帳號或密碼錯誤");
