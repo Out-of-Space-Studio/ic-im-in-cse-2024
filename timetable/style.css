@@ -13,12 +13,13 @@ body {
     overflow-x: auto;
     background-color: #f8f9fa;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 1550px;
 }
 table {
     border-radius: 10px;
     transform-origin: top left;
     table-layout: fixed;
-    width: max-content;
+    width: 1150px;
     border-collapse: collapse;
     font-family: "IANSUI";
     height: 170px;
