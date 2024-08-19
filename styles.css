@@ -257,6 +257,7 @@ p.cursor::after {
     width: 100%;
     overflow: hidden;
     margin-bottom: 35px;
+    border-radius: 10px;
 }
 
 .timetable {

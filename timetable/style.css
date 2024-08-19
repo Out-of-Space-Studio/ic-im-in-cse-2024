@@ -10,13 +10,12 @@ body {
 }
 .calendar-container {
     overflow: hidden;
-
     overflow-x: auto;
     background-color: #f8f9fa;
-    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 table {
+    border-radius: 10px;
     transform-origin: top left;
     table-layout: fixed;
     width: max-content;
