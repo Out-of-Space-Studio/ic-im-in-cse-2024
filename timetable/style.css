@@ -19,7 +19,7 @@ table {
     border-radius: 10px;
     transform-origin: top left;
     table-layout: fixed;
-    width: 1150px;
+    width: 1550px;
     border-collapse: collapse;
     font-family: "IANSUI";
     height: 170px;
@@ -93,4 +93,9 @@ td:hover {
         padding: 6px;
         font-size: 10px;
     }
+}
+
+.left {
+    margin-left: 30px;
+    text-align: left;
 }
