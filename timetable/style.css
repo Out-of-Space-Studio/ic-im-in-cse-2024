@@ -10,16 +10,17 @@ body {
 }
 .calendar-container {
     overflow: hidden;
+    max-width: 100%;
     overflow-x: auto;
     background-color: #f8f9fa;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 1550px;
 }
 table {
-    border-radius: 10px;
     transform-origin: top left;
     table-layout: fixed;
-    width: 1550px;
+    width: max-content;
+    min-width: 100%;
     border-collapse: collapse;
     font-family: "IANSUI";
     height: 170px;
@@ -33,7 +34,6 @@ td {
     border: 1px solid #2c3e50;
     transition: background-color 0.3s ease;
     white-space: nowrap;
-    width: 70px;
 }
 
 th {
@@ -93,9 +93,4 @@ td:hover {
         padding: 6px;
         font-size: 10px;
     }
-}
-
-.left {
-    margin-left: 30px;
-    text-align: left;
 }
