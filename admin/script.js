@@ -152,8 +152,8 @@ async function getUserData() {
             snapshot.forEach((childSnapshot) => {
                 students.push(childSnapshot.val());
                 console.log(childSnapshot);
-                console.log(Object.keys(snapshot.val())[0]);
-                add2Table(childSnapshot.val());
+                console.log(Object.keys(snapshot.val()));
+                add2Table(Object.keys(snapshot.val()), childSnapshot.val());
             });
         })
         .catch((error) => {
@@ -242,12 +242,12 @@ async function readUserData(stu) {
         });
 }
 
-function add2Table(studentData) {
+function add2Table(sid, studentData) {
     const tableBody = document.getElementById("studentTableBody");
     const row = tableBody.insertRow();
 
     const cellData = [
-        studentData.sid,
+        sid,
         studentData.NAME,
         GENDER2TXT[studentData.GENDER],
         DIET2TXT[studentData.DIET],
