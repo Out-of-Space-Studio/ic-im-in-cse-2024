@@ -73,7 +73,7 @@ class User {
         this.pwd = userData.pwd;
     }
     async verify() {
-        readAdminData(this);
+        checkAdminData(this);
     }
 }
 // db stuff
@@ -144,9 +144,28 @@ const appCheck = initializeAppCheck(app, {
     isTokenAutoRefreshEnabled: true,
 });
 
-async function getUserData() {}
+async function getUserData() {
+    const dbref = ref(getDatabase());
+    get(child(dbref, `students`))
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+                let students = [];
+                snapshot.forEach((childSnapshot) => {
+                    students.push(childSnapshot.val());
+                    alert(childSnapshot.val());
+                });
+            } else {
+                console.log("No data available");
+                alert("找不到該帳號的資料");
+            }
+        })
+        .catch((error) => {
+            console.error("Error reading data: ", error);
+            alert("伺服器發生錯誤，請稍後再試\n錯誤訊息: " + error.message);
+        });
+}
 
-async function readAdminData(user) {
+async function checkAdminData(user) {
     const dbref = ref(getDatabase());
     get(child(dbref, `admins/${user.account}`))
         .then((snapshot) => {
@@ -157,7 +176,8 @@ async function readAdminData(user) {
                 console.log(snapshot);
                 if (user.pwd === correctData.PWD) {
                     console.log("Login corrected.");
-                    alert("登錄成功");
+                    alert("登入成功");
+                    getUserData();
                     window.location.href = "../index.html";
                 } else {
                     console.log("Data wrong.");
