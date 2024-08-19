@@ -3,5 +3,5 @@
         "*.embeddedhtml": "html",
         "iosfwd": "cpp"
     },
-    "liveServer.settings.port": 5552
+    "liveServer.settings.port": 5553
 }

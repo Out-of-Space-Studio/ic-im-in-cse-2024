@@ -92,12 +92,14 @@ section end
     margin: 135px;
     position: relative;
     transform: rotate(-5deg);
+    text-align: right;
     text-shadow: 1px 1px 2em #efab84, 2px 2px 1em #e9e3a5, 0 0 0.2em #c9dda2;
 }
 .main-title {
     font-size: 72px;
     font-weight: bold;
     line-height: 0.9;
+    width: 100%;
 }
 .number {
     font-size: 120px;
