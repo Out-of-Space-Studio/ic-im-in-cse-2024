@@ -149,11 +149,14 @@ async function getUserData() {
     get(child(dbref, `students`))
         .then((snapshot) => {
             let students = [];
+            let count = 0;
             snapshot.forEach((childSnapshot) => {
                 students.push(childSnapshot.val());
                 console.log(childSnapshot);
-                console.log(Object.keys(snapshot.val()));
-                add2Table(Object.keys(snapshot.val()), childSnapshot.val());
+                add2Table(
+                    Object.keys(snapshot.val())[count],
+                    childSnapshot.val()
+                );
             });
         })
         .catch((error) => {
