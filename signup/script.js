@@ -247,7 +247,7 @@ async function writeUserData(stu) {
         .then(function () {
             console.log("Data written successfully");
             alert(
-                "報名成功！\n請於繳費時間內繳納完畢，感謝您的配合！\n\n報名費用: NT＄350\n繳費時間: 9/9(一)～9/11(三) 12:00～13:00\n繳費地點: R1303B"
+                "報名成功！\n請於繳費時間內繳納完畢，感謝您的配合！\n\n報名費用： NT＄350\n繳費時間： 9/9(一)～9/11(三) 12:00～13:00\n繳費地點： R1303B"
             );
             closeIframe();
             window.location.href = "../index.html";
