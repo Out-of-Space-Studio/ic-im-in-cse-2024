@@ -128,11 +128,13 @@ window.check_form = async function () {
     const department = form.SID.value.slice(3, 5);
     if (!CI2ID.includes(department)) {
         alert("僅開放資訊學院新生報名喔！");
+        window.location.href("./index.html");
     }
 
     const year = form.SID.value.slice(0, 3);
     if (year != "113") {
         alert("僅開放資訊學院新生報名喔！");
+        window.location.href("./index.html");
     }
 
     const student = new Stu({
