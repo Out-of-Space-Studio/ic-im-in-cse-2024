@@ -54,6 +54,8 @@ const RELATION2TXT = {
     OTHERS: "其他",
 };
 
+const CI2ID = ["14", "15", "16", "17", "18", "20", "33", "35"];
+
 window.todo = async function () {
     check_form();
     // closeIframe();
@@ -121,6 +123,16 @@ window.check_form = async function () {
         return;
     } else {
         IDNumber.style.borderColor = "";
+    }
+
+    const department = form.SID.value.slice(3, 5);
+    if (!CI2ID.includes(department)) {
+        alert("僅開放資訊學院新生報名喔！");
+    }
+
+    const year = form.SID.value.slice(0, 3);
+    if (year != "113") {
+        alert("僅開放資訊學院新生報名喔！");
     }
 
     const student = new Stu({
