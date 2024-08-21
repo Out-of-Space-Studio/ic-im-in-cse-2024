@@ -151,6 +151,9 @@ class Stu {
         this.emgName = studentData.emgName;
         this.emgRelation = studentData.emgRelation;
         this.emgPhoneNumber = studentData.emgPhoneNumber;
+        if (this.sid[0].toLowerCase() === "s") {
+            this.sid = this.sid.slice(1);
+        }
     }
 
     async confirmInfo() {
@@ -278,4 +281,3 @@ function verifyId(id) {
 
     return checkSum % 10 == 0;
 }
-
