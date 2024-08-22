@@ -252,6 +252,7 @@ function add2Table(index, sid, studentData) {
     const row = tableBody.insertRow();
 
     const cellData = [
+        index,
         sid,
         studentData.NAME,
         GENDER2TXT[studentData.GENDER],
